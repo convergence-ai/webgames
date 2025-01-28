@@ -39,13 +39,13 @@ def _record_to_sample(record: dict[str, Any]) -> Sample:
     )
 
 
-def get_webgames_dataset(limit: Optional[int] = 100) -> Dataset:
+def get_webgames_dataset(limit: Optional[int] = 100, shuffle: bool = False) -> Dataset:
     return hf_dataset(
         "convergence-ai/webgames",
         split="train",
         sample_fields=_record_to_sample,
         limit=limit,
-        shuffle=True,
+        shuffle=shuffle,
     )
 
 
