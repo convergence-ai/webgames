@@ -9,6 +9,8 @@ export interface TaskCompletion {
   completionTime: string;
   userId: string;
   startTime: string;
+  host: string;
+  url: string;
 }
 
 export const onRequestPost = async (context: {
@@ -17,19 +19,20 @@ export const onRequestPost = async (context: {
 }) => {
   try {
     const data: TaskCompletion = await context.request.json();
-    const { taskId, completionTime, userId, startTime } = data;
 
     await context.env.DB.prepare(
-      `INSERT INTO completions (task_id, start_time, completion_time, user_agent, ip_address, user_id)
-       VALUES (?, ?, ?, ?, ?, ?)`
+      `INSERT INTO completions (task_id, start_time, completion_time, user_agent, ip_address, user_id, host, url)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
     )
       .bind(
-        taskId,
-        startTime,
-        completionTime,
+        data.taskId,
+        data.startTime,
+        data.completionTime,
         context.request.headers.get("User-Agent") || "",
         context.request.headers.get("CF-Connecting-IP") || "",
-        userId || ""
+        data.userId || "",
+        data.host,
+        data.url
       )
       .run();
 

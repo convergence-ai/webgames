@@ -8,6 +8,8 @@ export interface TaskView {
   taskId: string;
   userId: string;
   viewTime: string; // ISO string
+  host: string;
+  url: string;
 }
 
 export const onRequestPost = async (context: {
@@ -18,15 +20,17 @@ export const onRequestPost = async (context: {
     const data: TaskView = await context.request.json();
 
     await context.env.DB.prepare(
-      `INSERT INTO views (task_id, view_time, user_agent, ip_address, user_id)
-       VALUES (?, ?, ?, ?, ?)`
+      `INSERT INTO views (task_id, view_time, user_agent, ip_address, user_id, host, url)
+       VALUES (?, ?, ?, ?, ?, ?, ?)`
     )
       .bind(
         data.taskId,
         data.viewTime,
         context.request.headers.get("User-Agent") || "",
         context.request.headers.get("CF-Connecting-IP") || "",
-        data.userId || ""
+        data.userId || "",
+        data.host,
+        data.url
       )
       .run();
 

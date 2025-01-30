@@ -65,6 +65,8 @@ export async function recordTaskCompletion(
       completionTime: validCompletionTime,
       startTime: validStartTime,
       userId: getUserId(),
+      host: window.location.host,
+      url: window.location.href,
     };
 
     const response = await fetch("/api/record-completion", {
@@ -94,6 +96,8 @@ export async function recordTaskView(
       taskId,
       viewTime: viewTimeISO,
       userId: getUserId(),
+      host: window.location.host,
+      url: window.location.href,
     };
 
     const response = await fetch("/api/record-view", {
