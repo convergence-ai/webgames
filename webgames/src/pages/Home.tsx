@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import Balancer from "react-wrap-balancer";
 import Stopwatch from "../components/Stopwatch";
 import { routes } from "../router/routes";
@@ -13,6 +13,8 @@ export default function Home() {
   }, []);
 
   const visibleRoutes = routes.filter((route) => !route.hidden);
+  const [searchParams] = useSearchParams();
+  const showDownloads = searchParams.get("showDownloads") === "true";
 
   const downloadChallengesJSONL = () => {
     const jsonl = visibleRoutes
@@ -102,20 +104,22 @@ export default function Home() {
                   GitHub
                 </span>
               </a>
-              <div className="hidden sm:flex gap-2">
-                <button
-                  onClick={downloadChallengesJSONL}
-                  className="px-4 py-2 text-sm font-mono text-gray-400 hover:text-gray-600 transition-colors duration-200"
-                >
-                  ↓ Challenges JSONL
-                </button>
-                <button
-                  onClick={downloadChallengesCSV}
-                  className="px-4 py-2 text-sm font-mono text-gray-400 hover:text-gray-600 transition-colors duration-200"
-                >
-                  ↓ Challenges CSV
-                </button>
-              </div>
+              {showDownloads && (
+                <div className="hidden sm:flex gap-2">
+                  <button
+                    onClick={downloadChallengesJSONL}
+                    className="px-4 py-2 text-sm font-mono text-gray-400 hover:text-gray-600 transition-colors duration-200"
+                  >
+                    ↓ Challenges JSONL
+                  </button>
+                  <button
+                    onClick={downloadChallengesCSV}
+                    className="px-4 py-2 text-sm font-mono text-gray-400 hover:text-gray-600 transition-colors duration-200"
+                  >
+                    ↓ Challenges CSV
+                  </button>
+                </div>
+              )}
             </div>
           </div>
           <div className="max-w-2xl mx-auto text-center">
