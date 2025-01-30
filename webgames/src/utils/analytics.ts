@@ -1,9 +1,5 @@
-import { useFunctions } from "vite-plugin-cloudflare-functions/client";
 import { TaskCompletion } from "../../functions/api/record-completion";
 import { TaskView } from "../../functions/api/record-view";
-
-// eslint-disable-next-line react-hooks/rules-of-hooks
-const client = useFunctions();
 
 // Generate a random user ID if none exists
 function getUserId() {
@@ -71,7 +67,10 @@ export async function recordTaskCompletion(
       userId: getUserId(),
     };
 
-    const response = await client.post("/api/record-completion", completion);
+    const response = await fetch("/api/record-completion", {
+      method: "POST",
+      body: JSON.stringify(completion),
+    });
     const data = await response.json();
     return data.success;
   } catch (error) {
@@ -97,7 +96,10 @@ export async function recordTaskView(
       userId: getUserId(),
     };
 
-    const response = await client.post("/api/record-view", view);
+    const response = await fetch("/api/record-view", {
+      method: "POST",
+      body: JSON.stringify(view),
+    });
     const data = await response.json();
     return data.success;
   } catch (error) {
