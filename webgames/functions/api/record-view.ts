@@ -4,11 +4,10 @@ interface Env {
   DB: D1Database;
 }
 
-export interface TaskCompletion {
+export interface TaskView {
   taskId: string;
-  completionTime: string;
   userId: string;
-  startTime: string;
+  viewTime: string; // ISO string
 }
 
 export const onRequestPost = async (context: {
@@ -16,20 +15,18 @@ export const onRequestPost = async (context: {
   env: Env;
 }) => {
   try {
-    const data: TaskCompletion = await context.request.json();
-    const { taskId, completionTime, userId, startTime } = data;
+    const data: TaskView = await context.request.json();
 
     await context.env.DB.prepare(
-      `INSERT INTO completions (task_id, start_time, completion_time, user_agent, ip_address, user_id)
-       VALUES (?, ?, ?, ?, ?, ?)`
+      `INSERT INTO views (task_id, view_time, user_agent, ip_address, user_id)
+       VALUES (?, ?, ?, ?, ?)`
     )
       .bind(
-        taskId,
-        startTime,
-        completionTime,
+        data.taskId,
+        data.viewTime,
         context.request.headers.get("User-Agent") || "",
         context.request.headers.get("CF-Connecting-IP") || "",
-        userId || ""
+        data.userId || ""
       )
       .run();
 
@@ -38,11 +35,11 @@ export const onRequestPost = async (context: {
       status: 200,
     });
   } catch (error) {
-    console.error("Error saving task completion:", error);
+    console.error("Error saving task view:", error);
     return new Response(
       JSON.stringify({
         success: false,
-        error: "Failed to save task completion",
+        error: "Failed to save task view",
       }),
       {
         headers: { "Content-Type": "application/json" },

@@ -1,22 +1,22 @@
 import { useFunctions } from "vite-plugin-cloudflare-functions/client";
 import { TaskCompletion } from "../../functions/api/record-completion";
+import { TaskView } from "../../functions/api/record-view";
 
 // eslint-disable-next-line react-hooks/rules-of-hooks
 const client = useFunctions();
 
 // Generate a random user ID if none exists
-const getUserId = () => {
+function getUserId() {
   const storedId = localStorage.getItem("user_id");
   if (storedId) return storedId;
 
-  const newId =
-    Math.random().toString(36).substring(2) + Date.now().toString(36);
+  const newId = crypto.randomUUID();
   localStorage.setItem("user_id", newId);
   return newId;
-};
+}
 
 // Ensure timestamp is a valid number
-const getValidTimestamp = (timestamp?: number) => {
+function getValidTimestamp(timestamp?: number) {
   if (
     typeof timestamp === "number" &&
     !isNaN(timestamp) &&
@@ -25,27 +25,50 @@ const getValidTimestamp = (timestamp?: number) => {
     return timestamp;
   }
   return Date.now();
-};
+}
+
+// Convert timestamp to ISO string and validate date range
+function safeDate(timestamp: number): [string, boolean] {
+  try {
+    const date = new Date(timestamp);
+    // Check if date is valid and within reasonable range
+    if (
+      isNaN(date.getTime()) ||
+      date.getFullYear() < 2020 ||
+      date.getFullYear() > 2100
+    ) {
+      return [new Date().toISOString(), false];
+    }
+    return [date.toISOString(), true];
+  } catch {
+    return [new Date().toISOString(), false];
+  }
+}
 
 export async function recordTaskCompletion(
-  partialCompletion: Partial<TaskCompletion>
+  taskId: string,
+  completionTime: number,
+  startTime: number
 ): Promise<boolean> {
   try {
-    const now = Date.now();
-    // Get validated timestamps
-    const validCompletionTime =
-      getValidTimestamp(partialCompletion.completionTime) || now;
-    const validStartTime =
-      getValidTimestamp(partialCompletion.start_time) || now - 1000;
+    const [validCompletionTime, okCompletionTime] = safeDate(completionTime);
+    if (!okCompletionTime) {
+      console.error("Invalid completion time provided");
+      return false;
+    }
+
+    const [validStartTime, okStartTime] = safeDate(startTime);
+
+    if (!okStartTime) {
+      console.error("Invalid start time provided");
+      return false;
+    }
 
     const completion: TaskCompletion = {
-      taskId: "unknown",
+      taskId,
       completionTime: validCompletionTime,
-      start_time: validStartTime,
-      user_id: getUserId(),
-      user_agent: navigator.userAgent,
-      ip_address: "", // This will be populated by the server
-      ...partialCompletion,
+      startTime: validStartTime,
+      userId: getUserId(),
     };
 
     const response = await client.post("/api/record-completion", completion);
@@ -53,6 +76,32 @@ export async function recordTaskCompletion(
     return data.success;
   } catch (error) {
     console.error("Failed to record task completion:", error);
+    return false;
+  }
+}
+
+export async function recordTaskView(
+  taskId: string,
+  viewTime: number
+): Promise<boolean> {
+  try {
+    const [viewTimeISO, okViewTime] = safeDate(getValidTimestamp(viewTime));
+    if (!okViewTime) {
+      console.error("Invalid view time provided");
+      return false;
+    }
+
+    const view: TaskView = {
+      taskId,
+      viewTime: viewTimeISO,
+      userId: getUserId(),
+    };
+
+    const response = await client.post("/api/record-view", view);
+    const data = await response.json();
+    return data.success;
+  } catch (error) {
+    console.error("Failed to record task view:", error);
     return false;
   }
 }
