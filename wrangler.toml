@@ -1,0 +1,8 @@
+name = "webgames"
+compatibility_date = "2025-01-30"
+pages_build_output_dir = "./dist"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "webgames"
+database_id = "6b41e0ba-1edf-4a0f-b25c-3a29b42aedbf"

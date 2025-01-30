@@ -1,9 +1,22 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Balancer from "react-wrap-balancer";
 import Stopwatch from "../components/Stopwatch";
 import { routes } from "../router/routes";
+import { recordTaskCompletion } from "../utils/analytics";
 
 export default function Home() {
+  useEffect(() => {
+    const startTime = Date.now();
+    (async () => {
+      await recordTaskCompletion({
+        taskId: "home",
+        start_time: startTime,
+        completionTime: Date.now(),
+      });
+    })();
+  }, []);
+
   const visibleRoutes = routes.filter((route) => !route.hidden);
 
   const downloadChallengesJSONL = () => {
