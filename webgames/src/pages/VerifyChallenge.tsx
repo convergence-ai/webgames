@@ -24,7 +24,6 @@ export default function LoginChallenge() {
   };
 
   const [correctCode] = useState(generateVerificationCode());
-  console.log(correctCode);
 
   useEffect(() => {
     const canvas = canvasRef.current;
