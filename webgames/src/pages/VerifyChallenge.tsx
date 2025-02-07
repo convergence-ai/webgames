@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 export const PASSWORD_Verify = "VERIFYMASTER2025";
 export const TASK_ID_Verify = "verify-challenge";
 
-export default function LoginChallenge() {
+export default function VerifyChallenge() {
   const [verificationCode, setVerificationCode] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
