@@ -27,7 +27,9 @@ pnpm run dev
 
 ## Download tasks
 
-To download the tasks and solutions:
+Tasks are available on as a dataset on [huggingface](https://huggingface.co/datasets/convergence-ai/webgames).
+
+Alternatively, you can download them from the webgames website:
 
 1. Go to [webgames.convergence.ai?showDownloads=true](https://webgames.convergence.ai?showDownloads=true)
 2. Click the download buttons in the top-right corner (csv or jsonl available)
