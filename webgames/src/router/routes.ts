@@ -198,6 +198,10 @@ import WolfGoatCabbage, {
   PASSWORD_WolfGoatCabbage,
   TASK_ID_WolfGoatCabbage,
 } from "../pages/WolfGoatCabbage";
+import VerifyChallenge, {
+  PASSWORD_Verify,
+  TASK_ID_Verify,
+} from "../pages/VerifyChallenge";
 
 export interface RouteConfig {
   path: string;
@@ -770,5 +774,14 @@ export const routes: RouteConfig[] = [
     component: StockMarketScroll,
     tags: ["scroll", "reading", "stocks"],
     password: PASSWORD_StockMarketScroll,
+  },
+  {
+    path: TASK_ID_Verify,
+    title: "Verification Challenge",
+    description: "Can you decipher the verification code?",
+    icon: "🔐",
+    component: VerifyChallenge,
+    tags: ["verification", "captcha"],
+    password: PASSWORD_Verify,
   },
 ];
