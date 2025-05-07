@@ -80,6 +80,14 @@ import EmojiRemember, {
   PASSWORD_EmojiRemember,
   TASK_ID_EmojiRemember,
 } from "../pages/EmojiRemember";
+import EmojiRememberEasy, {
+  PASSWORD_EmojiRememberEasy,
+  TASK_ID_EmojiRememberEasy,
+} from "../pages/EmojiRememberEasy";
+import EmojiRememberHard, {
+  PASSWORD_EmojiRememberHard,
+  TASK_ID_EmojiRememberHard,
+} from "../pages/EmojiRememberHard";
 import FileCredentials, {
   PASSWORD_FileCredentials,
   TASK_ID_FileCredentials,
@@ -450,6 +458,33 @@ export const routes: RouteConfig[] = [
     tags: ["memory", "search"],
     password: PASSWORD_EmojiRemember,
     difficulty: "hard",
+    variant: "base",
+    base_task: TASK_ID_EmojiRemember,
+  },
+  {
+    path: TASK_ID_EmojiRememberEasy,
+    title: "Emoji remember (Easy)",
+    description: "Remember a shorter sequence of emojis.",
+    icon: "🧠",
+    component: EmojiRememberEasy,
+    tags: ["memory", "search", "easy"],
+    password: PASSWORD_EmojiRememberEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_EmojiRemember,
+  },
+  {
+    path: TASK_ID_EmojiRememberHard,
+    title: "Emoji remember (Hard)",
+    description:
+      "Remember a longer sequence of emojis with more decoys, shown in parts.",
+    icon: "🧠",
+    component: EmojiRememberHard,
+    tags: ["memory", "search", "hard"],
+    password: PASSWORD_EmojiRememberHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_EmojiRemember,
   },
   {
     path: TASK_ID_Bullseye,
