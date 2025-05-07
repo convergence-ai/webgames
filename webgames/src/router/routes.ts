@@ -191,6 +191,14 @@ import SliderSymphony, {
   PASSWORD_SliderSymphony,
   TASK_ID_SliderSymphony,
 } from "../pages/SliderSymphony";
+import SliderSymphonyEasy, {
+  PASSWORD_SliderSymphonyEasy,
+  TASK_ID_SliderSymphonyEasy,
+} from "../pages/SliderSymphonyEasy";
+import SliderSymphonyHard, {
+  PASSWORD_SliderSymphonyHard,
+  TASK_ID_SliderSymphonyHard,
+} from "../pages/SliderSymphonyHard";
 import StockMarketScroll, {
   PASSWORD_StockMarketScroll,
   TASK_ID_StockMarketScroll,
@@ -405,6 +413,33 @@ export const routes: RouteConfig[] = [
     tags: ["slider", "actuation"],
     password: PASSWORD_SliderSymphony,
     difficulty: "medium",
+    variant: "base",
+    base_task: TASK_ID_SliderSymphony,
+  },
+  {
+    path: TASK_ID_SliderSymphonyEasy,
+    title: "Slider symphony (Easy)",
+    description: "Align fewer boxes by mastering the vertical sliders!",
+    icon: "🎚️",
+    component: SliderSymphonyEasy,
+    tags: ["slider", "actuation", "easy"],
+    password: PASSWORD_SliderSymphonyEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_SliderSymphony,
+  },
+  {
+    path: TASK_ID_SliderSymphonyHard,
+    title: "Slider symphony (Hard)",
+    description:
+      "Align more boxes with greater precision using vertical sliders!",
+    icon: "🎚️",
+    component: SliderSymphonyHard,
+    tags: ["slider", "actuation", "hard"],
+    password: PASSWORD_SliderSymphonyHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_SliderSymphony,
   },
   {
     path: TASK_ID_EmojiRemember,
