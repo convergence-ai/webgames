@@ -20,6 +20,14 @@ import ButtonMegastar, {
   PASSWORD_ButtonMegastar,
   TASK_ID_ButtonMegastar,
 } from "../pages/ButtonMegastar";
+import ButtonMegastarEasy, {
+  PASSWORD_ButtonMegastarEasy,
+  TASK_ID_ButtonMegastarEasy,
+} from "../pages/ButtonMegastarEasy";
+import ButtonMegastarHard, {
+  PASSWORD_ButtonMegastarHard,
+  TASK_ID_ButtonMegastarHard,
+} from "../pages/ButtonMegastarHard";
 import CalendarComprehension, {
   PASSWORD_CalendarComprehension,
   TASK_ID_CalendarComprehension,
@@ -182,10 +190,22 @@ import TodaysDate, {
   PASSWORD_TodaysDate,
   TASK_ID_TodaysDate,
 } from "../pages/TodaysDate";
+import TodaysDateEasy, {
+  PASSWORD_TodaysDateEasy,
+  TASK_ID_TodaysDateEasy,
+} from "../pages/TodaysDateEasy";
+import TodaysDateHard, {
+  PASSWORD_TodaysDateHard,
+  TASK_ID_TodaysDateHard,
+} from "../pages/TodaysDateHard";
 import TowersOfHanoi, {
   PASSWORD_TowersOfHanoi,
   TASK_ID_TowersOfHanoi,
 } from "../pages/TowersOfHanoi";
+import VerifyChallenge, {
+  PASSWORD_Verify,
+  TASK_ID_Verify,
+} from "../pages/VerifyChallenge";
 import WebGLText, {
   PASSWORD_WebGLText,
   TASK_ID_WebGLText,
@@ -198,10 +218,6 @@ import WolfGoatCabbage, {
   PASSWORD_WolfGoatCabbage,
   TASK_ID_WolfGoatCabbage,
 } from "../pages/WolfGoatCabbage";
-import VerifyChallenge, {
-  PASSWORD_Verify,
-  TASK_ID_Verify,
-} from "../pages/VerifyChallenge";
 
 export interface RouteConfig {
   path: string;
@@ -213,6 +229,8 @@ export interface RouteConfig {
   hidden?: boolean;
   password?: string;
   difficulty?: "easy" | "medium" | "hard";
+  variant?: "easy" | "base" | "hard";
+  base_task?: string;
 }
 
 export const routes: RouteConfig[] = [
@@ -225,6 +243,32 @@ export const routes: RouteConfig[] = [
     tags: ["form", "date"],
     password: PASSWORD_TodaysDate,
     difficulty: "easy",
+    variant: "base",
+    base_task: TASK_ID_TodaysDate,
+  },
+  {
+    path: TASK_ID_TodaysDateEasy,
+    title: "Today's date (Easy)",
+    description: "Enter today's date, with a hint available.",
+    icon: "📅",
+    component: TodaysDateEasy,
+    tags: ["form", "date", "easy"],
+    password: PASSWORD_TodaysDateEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_TodaysDate,
+  },
+  {
+    path: TASK_ID_TodaysDateHard,
+    title: "Yesterday's date (Hard)",
+    description: "Enter yesterday's date, with no placeholder hint.",
+    icon: "📅",
+    component: TodaysDateHard,
+    tags: ["form", "date", "hard"],
+    password: PASSWORD_TodaysDateHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_TodaysDate,
   },
   {
     path: TASK_ID_ButtonMegastar,
@@ -235,6 +279,34 @@ export const routes: RouteConfig[] = [
     tags: ["button", "click"],
     password: PASSWORD_ButtonMegastar,
     difficulty: "easy",
+    variant: "base",
+    base_task: TASK_ID_ButtonMegastar,
+  },
+  {
+    path: TASK_ID_ButtonMegastarEasy,
+    title: "Button megastar (Easy)",
+    description:
+      "Click the correct item on the page to reveal the password. Fewer items to click.",
+    icon: "🔘",
+    component: ButtonMegastarEasy,
+    tags: ["button", "click", "easy"],
+    password: PASSWORD_ButtonMegastarEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_ButtonMegastar,
+  },
+  {
+    path: TASK_ID_ButtonMegastarHard,
+    title: "Button megastar (Hard)",
+    description:
+      "Click the correct item on the page to reveal the password. Many items to click, requires scrolling.",
+    icon: "🔘",
+    component: ButtonMegastarHard,
+    tags: ["button", "click", "hard", "scroll"],
+    password: PASSWORD_ButtonMegastarHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_ButtonMegastar,
   },
   {
     path: TASK_ID_ClickCubed,

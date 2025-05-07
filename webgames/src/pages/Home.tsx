@@ -11,10 +11,15 @@ export default function Home() {
       await recordTaskView("home", Date.now());
     })();
   }, []);
-
-  const visibleRoutes = routes.filter((route) => !route.hidden);
   const [searchParams] = useSearchParams();
+  const showDifficulties = searchParams.get("showDifficulties") === "true";
   const showDownloads = searchParams.get("showDownloads") === "true";
+
+  const visibleRoutes = routes.filter(
+    (route) =>
+      !route.hidden &&
+      (showDifficulties || !route.variant || route.variant === "base")
+  );
 
   const downloadChallengesJSONL = () => {
     const jsonl = visibleRoutes
