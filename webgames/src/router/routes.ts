@@ -52,6 +52,14 @@ import ClickCubed, {
   PASSWORD_ClickCubed,
   TASK_ID_ClickCubed,
 } from "../pages/ClickCubed";
+import ClickCubedEasy, {
+  PASSWORD_ClickCubedEasy,
+  TASK_ID_ClickCubedEasy,
+} from "../pages/ClickCubedEasy";
+import ClickCubedHard, {
+  PASSWORD_ClickCubedHard,
+  TASK_ID_ClickCubedHard,
+} from "../pages/ClickCubedHard";
 import ClickPixel, {
   PASSWORD_ClickPixel,
   TASK_ID_ClickPixel,
@@ -317,6 +325,32 @@ export const routes: RouteConfig[] = [
     tags: ["click", "timed"],
     password: PASSWORD_ClickCubed,
     difficulty: "medium",
+    variant: "base",
+    base_task: TASK_ID_ClickCubed,
+  },
+  {
+    path: TASK_ID_ClickCubedEasy,
+    title: "Click³ (Easy)",
+    description: "Click three times before time runs out (10 seconds).",
+    icon: "⏱️",
+    component: ClickCubedEasy,
+    tags: ["click", "timed", "easy"],
+    password: PASSWORD_ClickCubedEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_ClickCubed,
+  },
+  {
+    path: TASK_ID_ClickCubedHard,
+    title: "Click³ (Hard)",
+    description: "Click three times before time runs out (3 seconds).",
+    icon: "⏱️",
+    component: ClickCubedHard,
+    tags: ["click", "timed", "hard"],
+    password: PASSWORD_ClickCubedHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_ClickCubed,
   },
   {
     path: TASK_ID_Patience,
