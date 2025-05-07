@@ -128,6 +128,14 @@ import Patience, {
   PASSWORD_Patience,
   TASK_ID_Patience,
 } from "../pages/Patience";
+import PatienceEasy, {
+  PASSWORD_PatienceEasy,
+  TASK_ID_PatienceEasy,
+} from "../pages/PatienceEasy";
+import PatienceHard, {
+  PASSWORD_PatienceHard,
+  TASK_ID_PatienceHard,
+} from "../pages/PatienceHard";
 import PixelCopy, {
   PASSWORD_PixelCopy,
   TASK_ID_PixelCopy,
@@ -361,6 +369,32 @@ export const routes: RouteConfig[] = [
     tags: ["timed", "refresh"],
     password: PASSWORD_Patience,
     difficulty: "medium",
+    variant: "base",
+    base_task: TASK_ID_Patience,
+  },
+  {
+    path: TASK_ID_PatienceEasy,
+    title: "Patience test (Easy)",
+    description: "Wait 5 seconds to reveal the password.",
+    icon: "⌛",
+    component: PatienceEasy,
+    tags: ["timed", "refresh", "easy"],
+    password: PASSWORD_PatienceEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_Patience,
+  },
+  {
+    path: TASK_ID_PatienceHard,
+    title: "Patience test (Hard)",
+    description: "Wait 20 seconds to reveal the password.",
+    icon: "⌛",
+    component: PatienceHard,
+    tags: ["timed", "refresh", "hard"],
+    password: PASSWORD_PatienceHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_Patience,
   },
   {
     path: TASK_ID_SliderSymphony,
