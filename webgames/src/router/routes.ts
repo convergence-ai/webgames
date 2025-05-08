@@ -183,6 +183,14 @@ import KeyCombo, {
   PASSWORD_KeyCombo,
   TASK_ID_KeyCombo,
 } from "../pages/KeyCombo";
+import KeyComboEasy, {
+  PASSWORD_KeyComboEasy,
+  TASK_ID_KeyComboEasy,
+} from "../pages/KeyComboEasy";
+import KeyComboHard, {
+  PASSWORD_KeyComboHard,
+  TASK_ID_KeyComboHard,
+} from "../pages/KeyComboHard";
 import LadyBirdPlanner, {
   PASSWORD_LadyBirdPlanner,
   TASK_ID_LadyBirdPlanner,
@@ -258,6 +266,14 @@ import ScrollVertical, {
   PASSWORD_ScrollVertical,
   TASK_ID_ScrollVertical,
 } from "../pages/ScrollVertical";
+import ScrollVerticalEasy, {
+  PASSWORD_ScrollVerticalEasy,
+  TASK_ID_ScrollVerticalEasy,
+} from "../pages/ScrollVerticalEasy";
+import ScrollVerticalHard, {
+  PASSWORD_ScrollVerticalHard,
+  TASK_ID_ScrollVerticalHard,
+} from "../pages/ScrollVerticalHard";
 import ShopAdmin, {
   PASSWORD_ShopAdmin,
   TASK_ID_ShopAdmin,
@@ -1022,6 +1038,32 @@ export const routes: RouteConfig[] = [
     tags: ["keyboard"],
     password: PASSWORD_KeyCombo,
     difficulty: "easy",
+    variant: "base",
+    base_task: TASK_ID_KeyCombo,
+  },
+  {
+    path: TASK_ID_KeyComboEasy,
+    title: "Key Combo (Easy)",
+    description: "Press an easier key combination to unlock the secret.",
+    icon: "⌨️",
+    component: KeyComboEasy,
+    tags: ["keyboard", "easy"],
+    password: PASSWORD_KeyComboEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_KeyCombo,
+  },
+  {
+    path: TASK_ID_KeyComboHard,
+    title: "Key Combo (Hard)",
+    description: "Press a harder key combination to unlock the secret.",
+    icon: "⌨️",
+    component: KeyComboHard,
+    tags: ["keyboard", "hard"],
+    password: PASSWORD_KeyComboHard,
+    difficulty: "medium",
+    variant: "hard",
+    base_task: TASK_ID_KeyCombo,
   },
   {
     path: TASK_ID_ScrollVertical,
@@ -1032,6 +1074,32 @@ export const routes: RouteConfig[] = [
     tags: ["scroll"],
     password: PASSWORD_ScrollVertical,
     difficulty: "easy",
+    variant: "base",
+    base_task: TASK_ID_ScrollVertical,
+  },
+  {
+    path: TASK_ID_ScrollVerticalEasy,
+    title: "Scroll vertical (Easy)",
+    description: "Scroll down fewer boxes to find the password.",
+    icon: "📜",
+    component: ScrollVerticalEasy,
+    tags: ["scroll", "easy"],
+    password: PASSWORD_ScrollVerticalEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_ScrollVertical,
+  },
+  {
+    path: TASK_ID_ScrollVerticalHard,
+    title: "Scroll vertical (Hard)",
+    description: "Scroll down many more boxes to find the password.",
+    icon: "📜",
+    component: ScrollVerticalHard,
+    tags: ["scroll", "hard"],
+    password: PASSWORD_ScrollVerticalHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_ScrollVertical,
   },
   {
     path: TASK_ID_ScrollHorizontal,
