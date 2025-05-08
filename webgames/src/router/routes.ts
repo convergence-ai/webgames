@@ -48,6 +48,14 @@ import CanvasCatch, {
   PASSWORD_CanvasCatch,
   TASK_ID_CanvasCatch,
 } from "../pages/CanvasCatch";
+import CanvasCatchEasy, {
+  PASSWORD_CanvasCatchEasy,
+  TASK_ID_CanvasCatchEasy,
+} from "../pages/CanvasCatchEasy";
+import CanvasCatchHard, {
+  PASSWORD_CanvasCatchHard,
+  TASK_ID_CanvasCatchHard,
+} from "../pages/CanvasCatchHard";
 import ChartRead, {
   PASSWORD_ChartRead,
   TASK_ID_ChartRead,
@@ -112,6 +120,10 @@ import FileUpload, {
   PASSWORD_FileUpload,
   TASK_ID_FileUpload,
 } from "../pages/FileUpload";
+import FileUploadHard, {
+  PASSWORD_FileUploadHard,
+  TASK_ID_FileUploadHard,
+} from "../pages/FileUploadHard";
 import FrogCrossing, {
   PASSWORD_FrogCrossing,
   TASK_ID_FrogCrossing,
@@ -774,6 +786,18 @@ export const routes: RouteConfig[] = [
     difficulty: "easy",
   },
   {
+    path: TASK_ID_FileUploadHard,
+    title: "File Upload (Hard)",
+    description: "Upload a valid MP3 file to complete this challenge",
+    icon: "📎",
+    component: FileUploadHard,
+    tags: ["file", "upload", "hard"],
+    password: PASSWORD_FileUploadHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_FileUpload,
+  },
+  {
     path: TASK_ID_CanvasCatch,
     title: "Canvas Catch",
     description:
@@ -783,6 +807,33 @@ export const routes: RouteConfig[] = [
     tags: ["canvas", "drag"],
     password: PASSWORD_CanvasCatch,
     difficulty: "medium",
+    variant: "base",
+    base_task: TASK_ID_CanvasCatch,
+  },
+  {
+    path: TASK_ID_CanvasCatchEasy,
+    title: "Canvas Catch (Easy)",
+    description: "Drag the larger circle into the larger target zone. Easier!",
+    icon: "🎯",
+    component: CanvasCatchEasy,
+    tags: ["canvas", "drag", "easy"],
+    password: PASSWORD_CanvasCatchEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_CanvasCatch,
+  },
+  {
+    path: TASK_ID_CanvasCatchHard,
+    title: "Canvas Catch (Hard)",
+    description:
+      "Drag the smaller circle into the smaller target zone. Harder!",
+    icon: "🎯",
+    component: CanvasCatchHard,
+    tags: ["canvas", "drag", "hard"],
+    password: PASSWORD_CanvasCatchHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_CanvasCatch,
   },
   {
     path: TASK_ID_BrickBuster,
