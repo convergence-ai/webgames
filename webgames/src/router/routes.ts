@@ -32,6 +32,14 @@ import ButtonHold, {
   PASSWORD_ButtonHold,
   TASK_ID_ButtonHold,
 } from "../pages/ButtonHold";
+import ButtonHoldEasy, {
+  PASSWORD_ButtonHoldEasy,
+  TASK_ID_ButtonHoldEasy,
+} from "../pages/ButtonHoldEasy";
+import ButtonHoldHard, {
+  PASSWORD_ButtonHoldHard,
+  TASK_ID_ButtonHoldHard,
+} from "../pages/ButtonHoldHard";
 import ButtonMegastar, {
   PASSWORD_ButtonMegastar,
   TASK_ID_ButtonMegastar,
@@ -978,6 +986,32 @@ export const routes: RouteConfig[] = [
     tags: ["button", "timed"],
     password: PASSWORD_ButtonHold,
     difficulty: "easy",
+    variant: "base",
+    base_task: TASK_ID_ButtonHold,
+  },
+  {
+    path: TASK_ID_ButtonHoldEasy,
+    title: "Button Hold (Easy)",
+    description: "Hold the button for exactly 1 second",
+    icon: "⏱️",
+    component: ButtonHoldEasy,
+    tags: ["button", "timed", "easy"],
+    password: PASSWORD_ButtonHoldEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_ButtonHold,
+  },
+  {
+    path: TASK_ID_ButtonHoldHard,
+    title: "Button Hold (Hard)",
+    description: "Hold the button for exactly 5 seconds",
+    icon: "⏱️",
+    component: ButtonHoldHard,
+    tags: ["button", "timed", "hard"],
+    password: PASSWORD_ButtonHoldHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_ButtonHold,
   },
   {
     path: TASK_ID_KeyCombo,
