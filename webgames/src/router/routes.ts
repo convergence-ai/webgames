@@ -274,6 +274,14 @@ import TextMirror, {
   PASSWORD_TextMirror,
   TASK_ID_TextMirror,
 } from "../pages/TextMirror";
+import TextMirrorEasy, {
+  PASSWORD_TextMirrorEasy,
+  TASK_ID_TextMirrorEasy,
+} from "../pages/TextMirrorEasy";
+import TextMirrorHard, {
+  PASSWORD_TextMirrorHard,
+  TASK_ID_TextMirrorHard,
+} from "../pages/TextMirrorHard";
 import TodaysDate, {
   PASSWORD_TodaysDate,
   TASK_ID_TodaysDate,
@@ -889,6 +897,33 @@ export const routes: RouteConfig[] = [
     tags: ["text", "copypaste", "typing"],
     password: PASSWORD_TextMirror,
     difficulty: "easy",
+    variant: "base",
+    base_task: TASK_ID_TextMirror,
+  },
+  {
+    path: TASK_ID_TextMirrorEasy,
+    title: "Text Mirror (Easy)",
+    description: "Perfectly copy the shorter, simpler text.",
+    icon: "📝",
+    component: TextMirrorEasy,
+    tags: ["text", "copypaste", "typing", "easy"],
+    password: PASSWORD_TextMirrorEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_TextMirror,
+  },
+  {
+    path: TASK_ID_TextMirrorHard,
+    title: "Text Mirror (Hard)",
+    description:
+      "Perfectly copy the longer, more complex text with code and special characters.",
+    icon: "📝",
+    component: TextMirrorHard,
+    tags: ["text", "copypaste", "typing", "hard", "code"],
+    password: PASSWORD_TextMirrorHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_TextMirror,
   },
   {
     path: TASK_ID_FrogCrossing,
