@@ -270,6 +270,14 @@ import WolfGoatCabbage, {
   PASSWORD_WolfGoatCabbage,
   TASK_ID_WolfGoatCabbage,
 } from "../pages/WolfGoatCabbage";
+import WolfGoatCabbageEasy, {
+  PASSWORD_WolfGoatCabbageEasy,
+  TASK_ID_WolfGoatCabbageEasy,
+} from "../pages/WolfGoatCabbageEasy";
+import WolfGoatCabbageHard, {
+  PASSWORD_WolfGoatCabbageHard,
+  TASK_ID_WolfGoatCabbageHard,
+} from "../pages/WolfGoatCabbageHard";
 
 export interface RouteConfig {
   path: string;
@@ -590,6 +598,33 @@ export const routes: RouteConfig[] = [
     tags: ["logic", "planning"],
     password: PASSWORD_WolfGoatCabbage,
     difficulty: "medium",
+    variant: "base",
+    base_task: TASK_ID_WolfGoatCabbage,
+  },
+  {
+    path: TASK_ID_WolfGoatCabbageEasy,
+    title: "River Crossing (Easy)",
+    description: "Transport a wolf and goat across the river safely.",
+    icon: "⛵",
+    component: WolfGoatCabbageEasy,
+    tags: ["logic", "planning", "easy"],
+    password: PASSWORD_WolfGoatCabbageEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_WolfGoatCabbage,
+  },
+  {
+    path: TASK_ID_WolfGoatCabbageHard,
+    title: "River Crossing (Hard)",
+    description:
+      "Transport a wolf, goat, cabbage, and fox across the river safely.",
+    icon: "⛵",
+    component: WolfGoatCabbageHard,
+    tags: ["logic", "planning", "hard"],
+    password: PASSWORD_WolfGoatCabbageHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_WolfGoatCabbage,
   },
   {
     path: TASK_ID_TowersOfHanoi,
