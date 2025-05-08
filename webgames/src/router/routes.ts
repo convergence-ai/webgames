@@ -8,6 +8,14 @@ import BrickBuster, {
   PASSWORD_BrickBuster,
   TASK_ID_BrickBuster,
 } from "../pages/BrickBuster";
+import BrickBusterEasy, {
+  PASSWORD_BrickBusterEasy,
+  TASK_ID_BrickBusterEasy,
+} from "../pages/BrickBusterEasy";
+import BrickBusterHard, {
+  PASSWORD_BrickBusterHard,
+  TASK_ID_BrickBusterHard,
+} from "../pages/BrickBusterHard";
 import Bullseye, {
   PASSWORD_Bullseye,
   TASK_ID_Bullseye,
@@ -844,6 +852,33 @@ export const routes: RouteConfig[] = [
     tags: ["game", "coordination"],
     password: PASSWORD_BrickBuster,
     difficulty: "hard",
+    variant: "base",
+    base_task: TASK_ID_BrickBuster,
+  },
+  {
+    path: TASK_ID_BrickBusterEasy,
+    title: "Brick buster (Easy)",
+    description: "Break fewer bricks to win!",
+    icon: "🧱",
+    component: BrickBusterEasy,
+    tags: ["game", "coordination", "easy"],
+    password: PASSWORD_BrickBusterEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_BrickBuster,
+  },
+  {
+    path: TASK_ID_BrickBusterHard,
+    title: "Brick buster (Hard)",
+    description:
+      "Break many more bricks to win! The ball is faster and the paddle is smaller.",
+    icon: "🧱",
+    component: BrickBusterHard,
+    tags: ["game", "coordination", "hard"],
+    password: PASSWORD_BrickBusterHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_BrickBuster,
   },
   {
     path: TASK_ID_TextMirror,
