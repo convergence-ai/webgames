@@ -262,6 +262,14 @@ import ScrollHorizontal, {
   PASSWORD_ScrollHorizontal,
   TASK_ID_ScrollHorizontal,
 } from "../pages/ScrollHorizontal";
+import ScrollHorizontalEasy, {
+  PASSWORD_ScrollHorizontalEasy,
+  TASK_ID_ScrollHorizontalEasy,
+} from "../pages/ScrollHorizontalEasy";
+import ScrollHorizontalHard, {
+  PASSWORD_ScrollHorizontalHard,
+  TASK_ID_ScrollHorizontalHard,
+} from "../pages/ScrollHorizontalHard";
 import ScrollVertical, {
   PASSWORD_ScrollVertical,
   TASK_ID_ScrollVertical,
@@ -1110,6 +1118,30 @@ export const routes: RouteConfig[] = [
     tags: ["scroll"],
     password: PASSWORD_ScrollHorizontal,
     difficulty: "easy",
+  },
+  {
+    path: TASK_ID_ScrollHorizontalEasy,
+    title: "Scroll horizontal (Easy)",
+    description: "Scroll right fewer boxes to find the password.",
+    icon: "➡️",
+    component: ScrollHorizontalEasy,
+    tags: ["scroll", "easy"],
+    password: PASSWORD_ScrollHorizontalEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_ScrollHorizontal,
+  },
+  {
+    path: TASK_ID_ScrollHorizontalHard,
+    title: "Scroll horizontal (Hard)",
+    description: "Scroll right many more boxes to find the password.",
+    icon: "➡️",
+    component: ScrollHorizontalHard,
+    tags: ["scroll", "hard"],
+    password: PASSWORD_ScrollHorizontalHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_ScrollHorizontal,
   },
   {
     path: TASK_ID_WebGLText,
