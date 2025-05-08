@@ -136,6 +136,14 @@ import FrogCrossing, {
   PASSWORD_FrogCrossing,
   TASK_ID_FrogCrossing,
 } from "../pages/FrogCrossing";
+import FrogCrossingEasy, {
+  PASSWORD_FrogCrossingEasy,
+  TASK_ID_FrogCrossingEasy,
+} from "../pages/FrogCrossingEasy";
+import FrogCrossingHard, {
+  PASSWORD_FrogCrossingHard,
+  TASK_ID_FrogCrossingHard,
+} from "../pages/FrogCrossingHard";
 import Herding, { PASSWORD_Herding, TASK_ID_Herding } from "../pages/Herding";
 import HerdingEasy, {
   PASSWORD_HerdingEasy,
@@ -934,6 +942,32 @@ export const routes: RouteConfig[] = [
     tags: ["game", "keyboard"],
     password: PASSWORD_FrogCrossing,
     difficulty: "hard",
+    variant: "base",
+    base_task: TASK_ID_FrogCrossing,
+  },
+  {
+    path: TASK_ID_FrogCrossingEasy,
+    title: "Frog Crossing (Easy)",
+    description: "Guide your frog safely across a quieter road.",
+    icon: "🐸",
+    component: FrogCrossingEasy,
+    tags: ["game", "keyboard", "easy"],
+    password: PASSWORD_FrogCrossingEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_FrogCrossing,
+  },
+  {
+    path: TASK_ID_FrogCrossingHard,
+    title: "Frog Crossing (Hard)",
+    description: "Guide your frog safely across a very busy and fast road.",
+    icon: "🐸",
+    component: FrogCrossingHard,
+    tags: ["game", "keyboard", "hard"],
+    password: PASSWORD_FrogCrossingHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_FrogCrossing,
   },
   {
     path: TASK_ID_ButtonHold,
