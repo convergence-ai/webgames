@@ -254,6 +254,14 @@ import TowersOfHanoi, {
   PASSWORD_TowersOfHanoi,
   TASK_ID_TowersOfHanoi,
 } from "../pages/TowersOfHanoi";
+import TowersOfHanoiEasy, {
+  PASSWORD_TowersOfHanoiEasy,
+  TASK_ID_TowersOfHanoiEasy,
+} from "../pages/TowersOfHanoiEasy";
+import TowersOfHanoiHard, {
+  PASSWORD_TowersOfHanoiHard,
+  TASK_ID_TowersOfHanoiHard,
+} from "../pages/TowersOfHanoiHard";
 import VerifyChallenge, {
   PASSWORD_Verify,
   TASK_ID_Verify,
@@ -635,6 +643,33 @@ export const routes: RouteConfig[] = [
     tags: ["logic", "planning"],
     password: PASSWORD_TowersOfHanoi,
     difficulty: "medium",
+    variant: "base",
+    base_task: TASK_ID_TowersOfHanoi,
+  },
+  {
+    path: TASK_ID_TowersOfHanoiEasy,
+    title: "Towers of Hanoi (Easy)",
+    description: "Stack 3 disks on the rightmost peg following the rules",
+    icon: "🗼",
+    component: TowersOfHanoiEasy,
+    tags: ["logic", "planning", "easy"],
+    password: PASSWORD_TowersOfHanoiEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_TowersOfHanoi,
+  },
+  {
+    path: TASK_ID_TowersOfHanoiHard,
+    title: "Towers of Hanoi (Hard)",
+    description:
+      "Stack 6 disks on the rightmost peg in the minimum number of moves",
+    icon: "🗼",
+    component: TowersOfHanoiHard,
+    tags: ["logic", "planning", "hard"],
+    password: PASSWORD_TowersOfHanoiHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_TowersOfHanoi,
   },
   {
     path: TASK_ID_ColorHarmony,
