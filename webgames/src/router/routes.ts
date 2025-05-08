@@ -76,6 +76,14 @@ import ColorHarmony, {
   PASSWORD_ColorHarmony,
   TASK_ID_ColorHarmony,
 } from "../pages/ColorHarmony";
+import ColorHarmonyEasy, {
+  PASSWORD_ColorHarmonyEasy,
+  TASK_ID_ColorHarmonyEasy,
+} from "../pages/ColorHarmonyEasy";
+import ColorHarmonyHard, {
+  PASSWORD_ColorHarmonyHard,
+  TASK_ID_ColorHarmonyHard,
+} from "../pages/ColorHarmonyHard";
 import CombinationLock, {
   PASSWORD_CombinationLock,
   TASK_ID_CombinationLock,
@@ -680,6 +688,33 @@ export const routes: RouteConfig[] = [
     tags: ["color", "slider", "dexterity", "perception"],
     password: PASSWORD_ColorHarmony,
     difficulty: "medium",
+    variant: "base",
+    base_task: TASK_ID_ColorHarmony,
+  },
+  {
+    path: TASK_ID_ColorHarmonyEasy,
+    title: "Color Harmony (Easy)",
+    description: "Mix an easier color combination using RGB sliders.",
+    icon: "🎨",
+    component: ColorHarmonyEasy,
+    tags: ["color", "slider", "dexterity", "perception", "easy"],
+    password: PASSWORD_ColorHarmonyEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_ColorHarmony,
+  },
+  {
+    path: TASK_ID_ColorHarmonyHard,
+    title: "Color Harmony (Hard)",
+    description:
+      "Mix a harder color combination with more precision using RGB sliders.",
+    icon: "🎨",
+    component: ColorHarmonyHard,
+    tags: ["color", "slider", "dexterity", "perception", "hard"],
+    password: PASSWORD_ColorHarmonyHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_ColorHarmony,
   },
   {
     path: TASK_ID_Herding,
