@@ -110,6 +110,14 @@ import FrogCrossing, {
 } from "../pages/FrogCrossing";
 import Herding, { PASSWORD_Herding, TASK_ID_Herding } from "../pages/Herding";
 import IAccept, { PASSWORD_IAccept, TASK_ID_IAccept } from "../pages/IAccept";
+import IAcceptEasy, {
+  PASSWORD_IAcceptEasy,
+  TASK_ID_IAcceptEasy,
+} from "../pages/IAcceptEasy";
+import IAcceptHard, {
+  PASSWORD_IAcceptHard,
+  TASK_ID_IAcceptHard,
+} from "../pages/IAcceptHard";
 import IframeContent, { PASSWORD_IframeContent } from "../pages/IframeContent";
 import IframeNest, {
   PASSWORD_IframeNest,
@@ -546,6 +554,32 @@ export const routes: RouteConfig[] = [
     tags: ["checkbox", "human"],
     password: PASSWORD_IAccept,
     difficulty: "easy",
+    variant: "base",
+    base_task: TASK_ID_IAccept,
+  },
+  {
+    path: TASK_ID_IAcceptEasy,
+    title: "I Accept (Easy)",
+    description: "Quickly prove you're human.",
+    icon: "✅",
+    component: IAcceptEasy,
+    tags: ["checkbox", "human", "easy"],
+    password: PASSWORD_IAcceptEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_IAccept,
+  },
+  {
+    path: TASK_ID_IAcceptHard,
+    title: "I Accept (Hard)",
+    description: "Undergo rigorous human verification.",
+    icon: "✅",
+    component: IAcceptHard,
+    tags: ["checkbox", "human", "hard", "text-input"],
+    password: PASSWORD_IAcceptHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_IAccept,
   },
   {
     path: TASK_ID_WolfGoatCabbage,
