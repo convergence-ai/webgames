@@ -354,6 +354,14 @@ import WebGLText, {
   PASSWORD_WebGLText,
   TASK_ID_WebGLText,
 } from "../pages/WebGLText";
+import WebGLTextEasy, {
+  PASSWORD_WebGLTextEasy,
+  TASK_ID_WebGLTextEasy,
+} from "../pages/WebGLTextEasy";
+import WebGLTextHard, {
+  PASSWORD_WebGLTextHard,
+  TASK_ID_WebGLTextHard,
+} from "../pages/WebGLTextHard";
 import WebsAssemble, {
   PASSWORD_WebsAssemble,
   TASK_ID_WebsAssemble,
@@ -1152,6 +1160,32 @@ export const routes: RouteConfig[] = [
     tags: ["webgl"],
     password: PASSWORD_WebGLText,
     difficulty: "easy",
+    variant: "base",
+    base_task: TASK_ID_WebGLText,
+  },
+  {
+    path: TASK_ID_WebGLTextEasy,
+    title: "WebGL Text (Easy)",
+    description: "Recognise the simple WebGL shape (Square).",
+    icon: "🎮",
+    component: WebGLTextEasy,
+    tags: ["webgl", "easy"],
+    password: PASSWORD_WebGLTextEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_WebGLText,
+  },
+  {
+    path: TASK_ID_WebGLTextHard,
+    title: "WebGL Text (Hard)",
+    description: "Recognise the complex WebGL shape (Star).",
+    icon: "🎮",
+    component: WebGLTextHard,
+    tags: ["webgl", "hard"],
+    password: PASSWORD_WebGLTextHard,
+    difficulty: "medium",
+    variant: "hard",
+    base_task: TASK_ID_WebGLText,
   },
   {
     path: TASK_ID_FileCredentials,
