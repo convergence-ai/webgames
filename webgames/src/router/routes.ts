@@ -117,6 +117,14 @@ import FrogCrossing, {
   TASK_ID_FrogCrossing,
 } from "../pages/FrogCrossing";
 import Herding, { PASSWORD_Herding, TASK_ID_Herding } from "../pages/Herding";
+import HerdingEasy, {
+  PASSWORD_HerdingEasy,
+  TASK_ID_HerdingEasy,
+} from "../pages/HerdingEasy";
+import HerdingHard, {
+  PASSWORD_HerdingHard,
+  TASK_ID_HerdingHard,
+} from "../pages/HerdingHard";
 import IAccept, { PASSWORD_IAccept, TASK_ID_IAccept } from "../pages/IAccept";
 import IAcceptEasy, {
   PASSWORD_IAcceptEasy,
@@ -726,6 +734,34 @@ export const routes: RouteConfig[] = [
     tags: ["mouse", "dexterity"],
     password: PASSWORD_Herding,
     difficulty: "hard",
+    variant: "base",
+    base_task: TASK_ID_Herding,
+  },
+  {
+    path: TASK_ID_HerdingEasy,
+    title: "Sheep Herding (Easy)",
+    description:
+      "Guide 2 wandering sheep into their pen by hovering with your cursor",
+    icon: "🐑",
+    component: HerdingEasy,
+    tags: ["mouse", "dexterity", "easy"],
+    password: PASSWORD_HerdingEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_Herding,
+  },
+  {
+    path: TASK_ID_HerdingHard,
+    title: "Sheep Herding (Hard)",
+    description:
+      "Guide 10 wandering sheep into their pen by hovering with your cursor",
+    icon: "🐑",
+    component: HerdingHard,
+    tags: ["mouse", "dexterity", "hard"],
+    password: PASSWORD_HerdingHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_Herding,
   },
   {
     path: TASK_ID_FileUpload,
