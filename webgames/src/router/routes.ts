@@ -166,6 +166,10 @@ import RecipeCalculator, {
 } from "../pages/RecipeCalculator";
 import RecipeDetail from "../pages/RecipeDetail";
 import RecipeList from "../pages/RecipeList";
+import ResumeChallenge, {
+  PASSWORD_ResumeChallenge,
+  TASK_ID_ResumeChallenge,
+} from "../pages/ResumeChallenge";
 import RightClickReveal, {
   PASSWORD_RightClickReveal,
   TASK_ID_RightClickReveal,
@@ -993,5 +997,15 @@ export const routes: RouteConfig[] = [
     component: VerifyChallenge,
     tags: ["verification", "captcha"],
     password: PASSWORD_Verify,
+  },
+  {
+    path: TASK_ID_ResumeChallenge,
+    title: "Resume Detective",
+    description: "Download a resume and extract the correct information",
+    icon: "📄",
+    component: ResumeChallenge,
+    tags: ["pdf", "form", "attention", "download"],
+    password: PASSWORD_ResumeChallenge,
+    difficulty: "medium",
   },
 ];
