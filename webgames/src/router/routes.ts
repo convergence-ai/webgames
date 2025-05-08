@@ -12,6 +12,14 @@ import Bullseye, {
   PASSWORD_Bullseye,
   TASK_ID_Bullseye,
 } from "../pages/Bullseye";
+import BullseyeEasy, {
+  PASSWORD_BullseyeEasy,
+  TASK_ID_BullseyeEasy,
+} from "../pages/BullseyeEasy";
+import BullseyeHard, {
+  PASSWORD_BullseyeHard,
+  TASK_ID_BullseyeHard,
+} from "../pages/BullseyeHard";
 import ButtonHold, {
   PASSWORD_ButtonHold,
   TASK_ID_ButtonHold,
@@ -496,6 +504,34 @@ export const routes: RouteConfig[] = [
     tags: ["click", "timed", "coordination"],
     password: PASSWORD_Bullseye,
     difficulty: "hard",
+    variant: "base",
+    base_task: TASK_ID_Bullseye,
+  },
+  {
+    path: TASK_ID_BullseyeEasy,
+    title: "Bullseye (Easy)",
+    description:
+      "Click the moving target. It's slower and requires fewer hits.",
+    icon: "🎯",
+    component: BullseyeEasy,
+    tags: ["click", "timed", "coordination", "easy"],
+    password: PASSWORD_BullseyeEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_Bullseye,
+  },
+  {
+    path: TASK_ID_BullseyeHard,
+    title: "Bullseye (Hard)",
+    description:
+      "Click the fast moving target. It's faster and requires more hits.",
+    icon: "🎯",
+    component: BullseyeHard,
+    tags: ["click", "timed", "coordination", "hard"],
+    password: PASSWORD_BullseyeHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_Bullseye,
   },
   {
     path: TASK_ID_IAccept,
