@@ -359,6 +359,14 @@ import RightClickReveal, {
   PASSWORD_RightClickReveal,
   TASK_ID_RightClickReveal,
 } from "../pages/RightClickReveal";
+import RightClickRevealEasy, {
+  PASSWORD_RightClickRevealEasy,
+  TASK_ID_RightClickRevealEasy,
+} from "../pages/RightClickRevealEasy";
+import RightClickRevealHard, {
+  PASSWORD_RightClickRevealHard,
+  TASK_ID_RightClickRevealHard,
+} from "../pages/RightClickRevealHard";
 import RoboCheck, {
   PASSWORD_RoboCheck,
   TASK_ID_RoboCheck,
@@ -2038,6 +2046,33 @@ export const routes: RouteConfig[] = [
     component: RightClickReveal,
     tags: ["mouse", "context-menu", "interaction"],
     password: PASSWORD_RightClickReveal,
+    difficulty: "easy",
+    variant: "base",
+    base_task: TASK_ID_RightClickReveal,
+  },
+  {
+    path: TASK_ID_RightClickRevealEasy,
+    title: "Right Click Reveal (Easy)",
+    description: "Right-click a large, obvious area to reveal the password.",
+    icon: "🖱️",
+    component: RightClickRevealEasy,
+    tags: ["mouse", "context-menu", "interaction", "easy"],
+    password: PASSWORD_RightClickRevealEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_RightClickReveal,
+  },
+  {
+    path: TASK_ID_RightClickRevealHard,
+    title: "Right Click Reveal (Hard)",
+    description: "Find and right-click a small, specific area among decoys.",
+    icon: "🖱️",
+    component: RightClickRevealHard,
+    tags: ["mouse", "context-menu", "interaction", "hard"],
+    password: PASSWORD_RightClickRevealHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_RightClickReveal,
   },
   {
     path: TASK_ID_CalendarComprehension,
