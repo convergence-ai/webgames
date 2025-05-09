@@ -212,6 +212,14 @@ import MenuNavigator, {
   PASSWORD_MenuNavigator,
   TASK_ID_MenuNavigator,
 } from "../pages/MenuNavigator";
+import MenuNavigatorEasy, {
+  PASSWORD_MenuNavigatorEasy,
+  TASK_ID_MenuNavigatorEasy,
+} from "../pages/MenuNavigatorEasy";
+import MenuNavigatorHard, {
+  PASSWORD_MenuNavigatorHard,
+  TASK_ID_MenuNavigatorHard,
+} from "../pages/MenuNavigatorHard";
 import OTPEntry, {
   PASSWORD_OTPEntry,
   TASK_ID_OTPEntry,
@@ -1250,6 +1258,34 @@ export const routes: RouteConfig[] = [
     component: MenuNavigator,
     tags: ["menu", "navigation", "hover"],
     password: PASSWORD_MenuNavigator,
+    difficulty: "medium",
+    variant: "base",
+    base_task: TASK_ID_MenuNavigator,
+  },
+  {
+    path: TASK_ID_MenuNavigatorEasy,
+    title: "Menu Navigator (Easy)",
+    description: "Navigate through a simplified menu to find the secret option",
+    icon: "🗺️",
+    component: MenuNavigatorEasy,
+    tags: ["menu", "navigation", "hover", "easy"],
+    password: PASSWORD_MenuNavigatorEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_MenuNavigator,
+  },
+  {
+    path: TASK_ID_MenuNavigatorHard,
+    title: "Menu Navigator (Hard)",
+    description:
+      "Navigate a complex, deeply nested menu to find the secret option",
+    icon: "🗺️",
+    component: MenuNavigatorHard,
+    tags: ["menu", "navigation", "hover", "hard"],
+    password: PASSWORD_MenuNavigatorHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_MenuNavigator,
   },
   {
     path: TASK_ID_PopupChaos,
