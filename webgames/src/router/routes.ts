@@ -132,6 +132,14 @@ import FileCredentials, {
   PASSWORD_FileCredentials,
   TASK_ID_FileCredentials,
 } from "../pages/FileCredentials";
+import FileCredentialsEasy, {
+  PASSWORD_FileCredentialsEasy,
+  TASK_ID_FileCredentialsEasy,
+} from "../pages/FileCredentialsEasy";
+import FileCredentialsHard, {
+  PASSWORD_FileCredentialsHard,
+  TASK_ID_FileCredentialsHard,
+} from "../pages/FileCredentialsHard";
 import FileUpload, {
   PASSWORD_FileUpload,
   TASK_ID_FileUpload,
@@ -1196,6 +1204,33 @@ export const routes: RouteConfig[] = [
     tags: ["file", "download"],
     password: PASSWORD_FileCredentials,
     difficulty: "easy",
+    variant: "base",
+    base_task: TASK_ID_FileCredentials,
+  },
+  {
+    path: TASK_ID_FileCredentialsEasy,
+    title: "File Credentials (Easy)",
+    description: "Log in using the provided credentials displayed on the page.",
+    icon: "🔑",
+    component: FileCredentialsEasy,
+    tags: ["file", "form", "easy"],
+    password: PASSWORD_FileCredentialsEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_FileCredentials,
+  },
+  {
+    path: TASK_ID_FileCredentialsHard,
+    title: "File Credentials (Hard)",
+    description:
+      "Download a JPEG image, extract credentials, and enter them along with the filename.",
+    icon: "🔑",
+    component: FileCredentialsHard,
+    tags: ["file", "download", "image", "form", "hard"],
+    password: PASSWORD_FileCredentialsHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_FileCredentials,
   },
   {
     path: TASK_ID_WebsAssemble,
