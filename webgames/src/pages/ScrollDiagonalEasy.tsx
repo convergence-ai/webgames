@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useTaskAnalytics } from "../utils/useTaskAnalytics";
 
-export const PASSWORD_ScrollDiagonal = "DIAGONALMASTER2024";
-export const TASK_ID_ScrollDiagonal = "scroll-diagonal";
+export const PASSWORD_ScrollDiagonalEasy = "DIAGONALEASY2024";
+export const TASK_ID_ScrollDiagonalEasy = "scroll-diagonal-easy";
 
-const ScrollDiagonal: React.FC = () => {
-  const { recordSuccess } = useTaskAnalytics(TASK_ID_ScrollDiagonal);
-  const gridSize = 20;
+const ScrollDiagonalEasy: React.FC = () => {
+  const { recordSuccess } = useTaskAnalytics(TASK_ID_ScrollDiagonalEasy);
+  const gridSize = 5; // Smaller grid size for easy version
   const furthestDistance = Math.sqrt(
     Math.pow((gridSize - 1) / gridSize, 2) +
       Math.pow((gridSize - 1) / gridSize, 2)
@@ -29,7 +29,7 @@ const ScrollDiagonal: React.FC = () => {
     );
 
     // Find the last box element
-    const lastBox = document.getElementById("last-box");
+    const lastBox = document.getElementById("last-box-easy");
 
     if (lastBox) {
       observer.observe(lastBox);
@@ -53,12 +53,12 @@ const ScrollDiagonal: React.FC = () => {
       return (
         <div
           key={colIndex}
-          id="last-box-base"
+          id="last-box-easy"
           className="inline-flex items-center justify-center w-96 h-48 m-3 rounded-lg bg-green-500 text-white"
         >
           <div className="text-center">
             <p>Congratulations! Password:</p>
-            <p>{PASSWORD_ScrollDiagonal}</p>
+            <p>{PASSWORD_ScrollDiagonalEasy}</p>
           </div>
         </div>
       );
@@ -93,7 +93,7 @@ const ScrollDiagonal: React.FC = () => {
   return (
     <div>
       <div className="fixed top-0 left-0 right-0 bg-white p-5 border-b z-10">
-        <h1 className="text-2xl font-bold">Diagonal Scroll Challenge</h1>
+        <h1 className="text-2xl font-bold">Diagonal Scroll Challenge (Easy)</h1>
         <p className="mt-2">
           Scroll to the bottom-right corner to reveal the secret password!
         </p>
@@ -104,4 +104,4 @@ const ScrollDiagonal: React.FC = () => {
   );
 };
 
-export default ScrollDiagonal;
+export default ScrollDiagonalEasy;
