@@ -1,0 +1,150 @@
+import React, { useEffect, useState } from "react";
+import { useTaskAnalytics } from "../utils/useTaskAnalytics";
+
+export const TASK_ID_PixelCopyHard = "pixel-copy-hard";
+export const PASSWORD_PixelCopyHard = "HardPixelsMaster2024"; // Changed password
+
+interface GridProps {
+  grid: boolean[][];
+  onToggle?: (row: number, col: number) => void;
+  gridSize: number; // Added gridSize prop
+}
+
+const Grid: React.FC<GridProps> = ({ grid, onToggle, gridSize }) => {
+  return (
+    // Use gridSize to make grid responsive
+    <div
+      className={`grid gap-0.5 w-[300px] h-[300px]`}
+      style={{ gridTemplateColumns: `repeat(${gridSize}, minmax(0, 1fr))` }}
+    >
+      {grid.map((row, rowIndex) =>
+        row.map((cell, colIndex) => (
+          <div
+            key={`${rowIndex}-${colIndex}`}
+            className={`w-full h-full border border-gray-400 cursor-pointer ${
+              cell ? "bg-black" : "bg-white"
+            }`}
+            onClick={() => onToggle?.(rowIndex, colIndex)}
+          />
+        ))
+      )}
+    </div>
+  );
+};
+
+const PixelCopyHard: React.FC = () => {
+  // Changed component name
+  const { recordSuccess } = useTaskAnalytics(TASK_ID_PixelCopyHard); // Changed TASK_ID
+  const [targetGrid, setTargetGrid] = useState<boolean[][]>([]);
+  const [userGrid, setUserGrid] = useState<boolean[][]>([]);
+  const [isComplete, setIsComplete] = useState(false);
+  const gridSize = 15; // Hard grid size
+
+  // Initialize grids
+  useEffect(() => {
+    const createEmptyGrid = () =>
+      Array(gridSize) // Use gridSize
+        .fill(false)
+        .map(() => Array(gridSize).fill(false)); // Use gridSize
+
+    // Create a frame pattern for hard version
+    const createFramePattern = () => {
+      const grid = createEmptyGrid();
+      for (let i = 0; i < gridSize; i++) {
+        grid[0][i] = true; // Top border
+        grid[gridSize - 1][i] = true; // Bottom border
+        grid[i][0] = true; // Left border
+        grid[i][gridSize - 1] = true; // Right border
+      }
+      // Add a small inner pattern to make it slightly more complex
+      grid[Math.floor(gridSize / 3)][Math.floor(gridSize / 3)] = true;
+      grid[Math.floor(gridSize / 3)][gridSize - 1 - Math.floor(gridSize / 3)] =
+        true;
+      grid[gridSize - 1 - Math.floor(gridSize / 3)][Math.floor(gridSize / 3)] =
+        true;
+      grid[gridSize - 1 - Math.floor(gridSize / 3)][
+        gridSize - 1 - Math.floor(gridSize / 3)
+      ] = true;
+
+      return grid;
+    };
+
+    setTargetGrid(createFramePattern());
+    setUserGrid(createEmptyGrid());
+  }, []); // Removed gridSize from dependency array
+
+  // Toggle user grid cell
+  const handleUserGridToggle = (row: number, col: number) => {
+    const newGrid = userGrid.map((r, rowIndex) =>
+      rowIndex === row
+        ? r.map((cell, colIndex) => (colIndex === col ? !cell : cell))
+        : r
+    );
+    setUserGrid(newGrid);
+
+    // Check if grids match
+    const matches = newGrid.every((row, rowIndex) =>
+      row.every((cell, colIndex) => cell === targetGrid[rowIndex][colIndex])
+    );
+    setIsComplete(matches);
+    if (matches) {
+      recordSuccess();
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-red-500 via-orange-500 to-yellow-500 p-8">
+      {" "}
+      {/* Changed background color */}
+      {/* Instructions Card */}
+      <div className="flex justify-center mb-8">
+        <div className="bg-white rounded-xl p-6 max-w-2xl shadow-sm">
+          <h1 className="text-3xl font-bold text-center mb-4 text-gray-800">
+            Pixel Copy Challenge (Hard) {/* Changed title */}
+          </h1>
+          <p className="text-center text-gray-600">
+            Can you recreate the intricate pattern? This will be tough! Click
+            squares to match the pattern. {/* Updated instructions */}
+          </p>
+        </div>
+      </div>
+      {/* Success Message */}
+      {isComplete && (
+        <div className="flex justify-center mb-8">
+          <div className="bg-green-100 border border-green-200 rounded-lg p-6 shadow-lg w-full max-w-2xl">
+            <h2 className="text-2xl font-bold text-green-800 mb-2">
+              Amazing Job!
+            </h2>
+            <p className="text-green-700">
+              The password is: {PASSWORD_PixelCopyHard}{" "}
+              {/* Changed password variable */}
+            </p>
+          </div>
+        </div>
+      )}
+      {/* Grids Container */}
+      <div className="flex justify-center gap-8 flex-wrap">
+        <div className="bg-white rounded-xl p-6 shadow-lg">
+          <h2 className="text-xl font-semibold mb-4 text-center text-gray-700">
+            Target Pattern
+          </h2>
+          <Grid grid={targetGrid} gridSize={gridSize} /> {/* Pass gridSize */}
+        </div>
+
+        <div className="bg-white rounded-xl p-6 shadow-lg">
+          <h2 className="text-xl font-semibold mb-4 text-center text-gray-700">
+            Your Pattern
+          </h2>
+          <Grid
+            grid={userGrid}
+            onToggle={handleUserGridToggle}
+            gridSize={gridSize}
+          />{" "}
+          {/* Pass gridSize */}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PixelCopyHard; // Changed export name
