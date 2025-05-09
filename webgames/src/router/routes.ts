@@ -360,6 +360,14 @@ import ShoppingChallenge, {
   PASSWORD_ShoppingChallenge,
   TASK_ID_ShoppingChallenge,
 } from "../pages/ShoppingChallenge";
+import ShoppingChallengeEasy, {
+  PASSWORD_ShoppingChallengeEasy,
+  TASK_ID_ShoppingChallengeEasy,
+} from "../pages/ShoppingChallengeEasy";
+import ShoppingChallengeHard, {
+  PASSWORD_ShoppingChallengeHard,
+  TASK_ID_ShoppingChallengeHard,
+} from "../pages/ShoppingChallengeHard";
 import SliderSymphony, {
   PASSWORD_SliderSymphony,
   TASK_ID_SliderSymphony,
@@ -1595,6 +1603,34 @@ export const routes: RouteConfig[] = [
     component: ShoppingChallenge,
     tags: ["math", "shopping", "calculation"],
     password: PASSWORD_ShoppingChallenge,
+    difficulty: "medium",
+    variant: "base",
+    base_task: TASK_ID_ShoppingChallenge,
+  },
+  {
+    path: TASK_ID_ShoppingChallengeEasy,
+    title: "Shopping Challenge (Easy)",
+    description: "Add fewer items to your cart and calculate the total price.",
+    icon: "🛍️",
+    component: ShoppingChallengeEasy,
+    tags: ["math", "shopping", "calculation", "easy"],
+    password: PASSWORD_ShoppingChallengeEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_ShoppingChallenge,
+  },
+  {
+    path: TASK_ID_ShoppingChallengeHard,
+    title: "Shopping Challenge (Hard)",
+    description:
+      "Add many items, some tricky, to your cart and calculate the total price.",
+    icon: "🛍️",
+    component: ShoppingChallengeHard,
+    tags: ["math", "shopping", "calculation", "hard"],
+    password: PASSWORD_ShoppingChallengeHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_ShoppingChallenge,
   },
   {
     path: "maze/*",
