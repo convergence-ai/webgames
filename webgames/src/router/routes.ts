@@ -4,6 +4,14 @@ import BlockStack, {
   PASSWORD_BlockStack,
   TASK_ID_BlockStack,
 } from "../pages/BlockStack";
+import BlockStackEasy, {
+  PASSWORD_BlockStackEasy,
+  TASK_ID_BlockStackEasy,
+} from "../pages/BlockStackEasy";
+import BlockStackHard, {
+  PASSWORD_BlockStackHard,
+  TASK_ID_BlockStackHard,
+} from "../pages/BlockStackHard";
 import BrickBuster, {
   PASSWORD_BrickBuster,
   TASK_ID_BrickBuster,
@@ -1779,6 +1787,34 @@ export const routes: RouteConfig[] = [
     component: BlockStack,
     tags: ["physics", "coordination", "puzzle"],
     password: PASSWORD_BlockStack,
+    difficulty: "medium",
+    variant: "base",
+    base_task: TASK_ID_BlockStack,
+  },
+  {
+    path: TASK_ID_BlockStackEasy,
+    title: "Block Stack (Easy)",
+    description: "Stack fewer blocks above a higher line for a shorter time.",
+    icon: "🏗️",
+    component: BlockStackEasy,
+    tags: ["physics", "coordination", "puzzle", "easy"],
+    password: PASSWORD_BlockStackEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_BlockStack,
+  },
+  {
+    path: TASK_ID_BlockStackHard,
+    title: "Block Stack (Hard)",
+    description:
+      "Stack more, smaller, and trickier blocks above a lower line for a longer time.",
+    icon: "🏗️",
+    component: BlockStackHard,
+    tags: ["physics", "coordination", "puzzle", "hard"],
+    password: PASSWORD_BlockStackHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_BlockStack,
   },
   {
     path: TASK_ID_IframeNest,
