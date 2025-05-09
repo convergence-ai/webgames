@@ -108,10 +108,7 @@ import ClickCubedHard, {
   PASSWORD_ClickCubedHard,
   TASK_ID_ClickCubedHard,
 } from "../pages/ClickCubedHard";
-import ClickPixel, {
-  PASSWORD_ClickPixel,
-  TASK_ID_ClickPixel,
-} from "../pages/ClickPixel";
+import { TASK_ID_ClickPixel } from "../pages/ClickPixel";
 import ColorHarmony, {
   PASSWORD_ColorHarmony,
   TASK_ID_ColorHarmony,
@@ -264,6 +261,14 @@ import PixelCopy, {
   PASSWORD_PixelCopy,
   TASK_ID_PixelCopy,
 } from "../pages/PixelCopy";
+import PixelCopyEasy, {
+  PASSWORD_PixelCopyEasy,
+  TASK_ID_PixelCopyEasy,
+} from "../pages/PixelCopyEasy";
+import PixelCopyHard, {
+  PASSWORD_PixelCopyHard,
+  TASK_ID_PixelCopyHard,
+} from "../pages/PixelCopyHard";
 import PopupChaos, {
   PASSWORD_PopupChaos,
   TASK_ID_PopupChaos,
@@ -1468,6 +1473,30 @@ export const routes: RouteConfig[] = [
     password: PASSWORD_PixelCopy,
   },
   {
+    path: TASK_ID_PixelCopyEasy,
+    title: "Pixel Copy (Easy)",
+    description: "Recreate the simple pattern by toggling pixels in the grid",
+    icon: "🎨",
+    component: PixelCopyEasy,
+    tags: ["grid", "pattern", "memory", "easy"],
+    password: PASSWORD_PixelCopyEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_PixelCopy,
+  },
+  {
+    path: TASK_ID_PixelCopyHard,
+    title: "Pixel Copy (Hard)",
+    description: "Recreate the complex pattern by toggling pixels in the grid",
+    icon: "🎨",
+    component: PixelCopyHard,
+    tags: ["grid", "pattern", "memory", "hard"],
+    password: PASSWORD_PixelCopyHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_PixelCopy,
+  },
+  {
     path: TASK_ID_IllegalMaterial,
     title: "Restricted Content",
     description:
@@ -1665,12 +1694,39 @@ export const routes: RouteConfig[] = [
   },
   {
     path: TASK_ID_ClickPixel,
-    title: "Pixel Perfect",
-    description: "Can you click on a single pixel target?",
-    icon: "🎯",
-    component: ClickPixel,
-    tags: ["precision", "mouse", "dexterity"],
-    password: PASSWORD_ClickPixel,
+    title: "Pixel Copy",
+    description: "Recreate the pattern by clicking pixels.",
+    icon: "🖼️",
+    component: PixelCopy,
+    tags: ["pixel", "drawing", "precision"],
+    password: PASSWORD_PixelCopy,
+    difficulty: "medium",
+    variant: "base",
+    base_task: TASK_ID_PixelCopy,
+  },
+  {
+    path: TASK_ID_PixelCopyEasy,
+    title: "Pixel Copy (Easy)",
+    description: "Recreate a simple pattern on a smaller grid.",
+    icon: "🖼️",
+    component: PixelCopyEasy,
+    tags: ["pixel", "drawing", "precision", "easy"],
+    password: PASSWORD_PixelCopyEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_PixelCopy,
+  },
+  {
+    path: TASK_ID_PixelCopyHard,
+    title: "Pixel Copy (Hard)",
+    description: "Recreate a complex pattern on a larger grid.",
+    icon: "🖼️",
+    component: PixelCopyHard,
+    tags: ["pixel", "drawing", "precision", "hard"],
+    password: PASSWORD_PixelCopyHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_PixelCopy,
   },
   {
     path: "recipes",
