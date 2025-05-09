@@ -76,10 +76,26 @@ import ChartRead, {
   PASSWORD_ChartRead,
   TASK_ID_ChartRead,
 } from "../pages/ChartRead";
+import ChartReadEasy, {
+  PASSWORD_ChartReadEasy,
+  TASK_ID_ChartReadEasy,
+} from "../pages/ChartReadEasy";
+import ChartReadHard, {
+  PASSWORD_ChartReadHard,
+  TASK_ID_ChartReadHard,
+} from "../pages/ChartReadHard";
 import ChartTranscribe, {
   PASSWORD_ChartTranscribe,
   TASK_ID_ChartTranscribe,
 } from "../pages/ChartTranscribe";
+import ChartTranscribeEasy, {
+  PASSWORD_ChartTranscribeEasy,
+  TASK_ID_ChartTranscribeEasy,
+} from "../pages/ChartTranscribeEasy";
+import ChartTranscribeHard, {
+  PASSWORD_ChartTranscribeHard,
+  TASK_ID_ChartTranscribeHard,
+} from "../pages/ChartTranscribeHard";
 import ClickCubed, {
   PASSWORD_ClickCubed,
   TASK_ID_ClickCubed,
@@ -112,6 +128,14 @@ import CombinationLock, {
   PASSWORD_CombinationLock,
   TASK_ID_CombinationLock,
 } from "../pages/CombinationLock";
+import CombinationLockEasy, {
+  PASSWORD_CombinationLockEasy,
+  TASK_ID_CombinationLockEasy,
+} from "../pages/CombinationLockEasy";
+import CombinationLockHard, {
+  PASSWORD_CombinationLockHard,
+  TASK_ID_CombinationLockHard,
+} from "../pages/CombinationLockHard";
 import ContextBreaker, {
   PASSWORD_ContextBreaker,
   TASK_ID_ContextBreaker,
@@ -1340,6 +1364,32 @@ export const routes: RouteConfig[] = [
     password: PASSWORD_ChartRead,
   },
   {
+    path: TASK_ID_ChartReadEasy,
+    title: "Chart Read (Easy)",
+    description:
+      "Find the highest price and the time it occurred. The price needs to be within 10% of the actual maximum.",
+    icon: "📈",
+    component: ChartReadEasy,
+    tags: ["chart", "analysis", "observation", "easy"],
+    password: PASSWORD_ChartReadEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_ChartRead,
+  },
+  {
+    path: TASK_ID_ChartReadHard,
+    title: "Chart Read (Hard)",
+    description:
+      "Identify the absolute maximum price and the precise time it occurred. The price must be within 2.5% of the actual maximum. The chart is more volatile.",
+    icon: "📈",
+    component: ChartReadHard,
+    tags: ["chart", "analysis", "observation", "hard"],
+    password: PASSWORD_ChartReadHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_ChartRead,
+  },
+  {
     path: TASK_ID_ChartTranscribe,
     title: "Chart Transcribe",
     description: "Transcribe the bar chart data into CSV format",
@@ -1349,6 +1399,32 @@ export const routes: RouteConfig[] = [
     password: PASSWORD_ChartTranscribe,
   },
   {
+    path: TASK_ID_ChartTranscribeEasy,
+    title: "Chart Transcribe (Easy)",
+    description:
+      'Study the bar chart and transcribe both series of data in CSV format. Each line should contain three values: time, primary value, secondary value (e.g., "00:00,45,32"). Include all data points to complete the challenge! The primary series is the purple bar, and the secondary series is the blue bar.',
+    icon: "📊",
+    component: ChartTranscribeEasy,
+    tags: ["chart", "data", "accuracy", "easy"],
+    password: PASSWORD_ChartTranscribeEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_ChartTranscribe,
+  },
+  {
+    path: TASK_ID_ChartTranscribeHard,
+    title: "Chart Transcribe (Hard)",
+    description:
+      'Study the bar chart and transcribe both series of data in CSV format. Each line should contain three values: time, primary value, secondary value (e.g., "00:00,45,32"). Include all data points to complete the challenge! The primary series is the purple bar, and the secondary series is the blue bar.',
+    icon: "📊",
+    component: ChartTranscribeHard,
+    tags: ["chart", "data", "accuracy", "hard"],
+    password: PASSWORD_ChartTranscribeHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_ChartTranscribe,
+  },
+  {
     path: TASK_ID_CombinationLock,
     title: "Combination Lock",
     description: "Solve Grampa's riddles to unlock the combination",
@@ -1356,6 +1432,31 @@ export const routes: RouteConfig[] = [
     component: CombinationLock,
     tags: ["puzzle", "riddle", "numbers"],
     password: PASSWORD_CombinationLock,
+  },
+  {
+    path: TASK_ID_CombinationLockEasy,
+    title: "Combination Lock (Easy)",
+    description: "Download and read the note to solve the easy riddles!",
+    icon: "🔒",
+    component: CombinationLockEasy,
+    tags: ["puzzle", "riddle", "numbers", "easy"],
+    password: PASSWORD_CombinationLockEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_CombinationLock,
+  },
+  {
+    path: TASK_ID_CombinationLockHard,
+    title: "Combination Lock (Hard)",
+    description:
+      "Download the benefactor's note. Decipher the complex riddles to unlock the ultimate combination!",
+    icon: "🔒",
+    component: CombinationLockHard,
+    tags: ["puzzle", "riddle", "numbers", "hard"],
+    password: PASSWORD_CombinationLockHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_CombinationLock,
   },
   {
     path: TASK_ID_PixelCopy,
