@@ -425,6 +425,14 @@ import StockMarketScroll, {
   TASK_ID_StockMarketScroll,
 } from "../pages/StockMarketScroll";
 import TabSync, { PASSWORD_TabSync, TASK_ID_TabSync } from "../pages/TabSync";
+import TabSyncEasy, {
+  PASSWORD_TabSyncEasy,
+  TASK_ID_TabSyncEasy,
+} from "../pages/TabSyncEasy";
+import TabSyncHard, {
+  PASSWORD_TabSyncHard,
+  TASK_ID_TabSyncHard,
+} from "../pages/TabSyncHard";
 import TabSyncReceiver from "../pages/TabSyncReceiver";
 import TabSyncSender from "../pages/TabSyncSender";
 import TextMirror, {
@@ -1881,6 +1889,32 @@ export const routes: RouteConfig[] = [
     component: TabSync,
     tags: ["tabs", "communication", "colors"],
     password: PASSWORD_TabSync,
+  },
+  {
+    path: TASK_ID_TabSyncEasy,
+    title: "Tab Sync (Easy)",
+    description:
+      "Synchronize a shorter sequence of colors between browser tabs.",
+    icon: "🎨",
+    component: TabSyncEasy,
+    tags: ["tabs", "communication", "colors", "easy"],
+    password: PASSWORD_TabSyncEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_TabSync,
+  },
+  {
+    path: TASK_ID_TabSyncHard,
+    title: "Tab Sync (Hard)",
+    description:
+      "Synchronize a longer and more complex sequence of colors between browser tabs.",
+    icon: "🎨",
+    component: TabSyncHard,
+    tags: ["tabs", "communication", "colors", "hard"],
+    password: PASSWORD_TabSyncHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_TabSync,
   },
   {
     path: "tab-sync/sender",
