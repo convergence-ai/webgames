@@ -137,6 +137,14 @@ import ContextBreaker, {
   PASSWORD_ContextBreaker,
   TASK_ID_ContextBreaker,
 } from "../pages/ContextBreaker";
+import ContextBreakerEasy, {
+  PASSWORD_ContextBreakerEasy,
+  TASK_ID_ContextBreakerEasy,
+} from "../pages/ContextBreakerEasy";
+import ContextBreakerHard, {
+  PASSWORD_ContextBreakerHard,
+  TASK_ID_ContextBreakerHard,
+} from "../pages/ContextBreakerHard";
 import EmojiRemember, {
   PASSWORD_EmojiRemember,
   TASK_ID_EmojiRemember,
@@ -1687,6 +1695,34 @@ export const routes: RouteConfig[] = [
     component: ContextBreaker,
     tags: ["scroll", "endurance", "patience"],
     password: PASSWORD_ContextBreaker,
+    difficulty: "medium",
+    variant: "base",
+    base_task: TASK_ID_ContextBreaker,
+  },
+  {
+    path: TASK_ID_ContextBreakerEasy,
+    title: "Context Breaker (Easy)",
+    description: "Scroll a short way to find the secret password.",
+    icon: "🤖",
+    component: ContextBreakerEasy,
+    tags: ["scroll", "endurance", "patience", "easy"],
+    password: PASSWORD_ContextBreakerEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_ContextBreaker,
+  },
+  {
+    path: TASK_ID_ContextBreakerHard,
+    title: "Context Breaker (Hard)",
+    description:
+      "Scroll an extremely long way to find the secret password. Good luck!",
+    icon: "🤖",
+    component: ContextBreakerHard,
+    tags: ["scroll", "endurance", "patience", "hard"],
+    password: PASSWORD_ContextBreakerHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_ContextBreaker,
   },
   {
     path: TASK_ID_ScrollDiagonal,
