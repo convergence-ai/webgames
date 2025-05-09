@@ -237,6 +237,14 @@ import MapPanner, {
   TASK_ID_MapPanner,
 } from "../pages/MapPanner";
 import MazeNavigator, { PASSWORD_MazeNavigator } from "../pages/MazeNavigator";
+import MazeNavigatorEasy, {
+  PASSWORD_MazeNavigatorEasy,
+  TASK_ID_MazeNavigatorEasy,
+} from "../pages/MazeNavigatorEasy";
+import MazeNavigatorHard, {
+  PASSWORD_MazeNavigatorHard,
+  TASK_ID_MazeNavigatorHard,
+} from "../pages/MazeNavigatorHard";
 import MenuNavigator, {
   PASSWORD_MenuNavigator,
   TASK_ID_MenuNavigator,
@@ -1641,6 +1649,34 @@ export const routes: RouteConfig[] = [
     component: MazeNavigator,
     tags: ["navigation", "memory", "maze"],
     password: PASSWORD_MazeNavigator,
+    difficulty: "medium",
+    variant: "base",
+    base_task: "maze",
+  },
+  {
+    path: `${TASK_ID_MazeNavigatorEasy}/*`,
+    title: "The Maze (Easy)",
+    description: "Navigate a simpler maze to find the exit.",
+    icon: "🚪",
+    component: MazeNavigatorEasy,
+    tags: ["navigation", "memory", "maze", "easy"],
+    password: PASSWORD_MazeNavigatorEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: "maze",
+  },
+  {
+    path: `${TASK_ID_MazeNavigatorHard}/*`,
+    title: "The Maze (Hard)",
+    description:
+      "Navigate a complex maze with more dead ends to find the exit.",
+    icon: "🚪",
+    component: MazeNavigatorHard,
+    tags: ["navigation", "memory", "maze", "hard"],
+    password: PASSWORD_MazeNavigatorHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: "maze",
   },
   {
     path: TASK_ID_ContextBreaker,
