@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "otpauth": "^9.4.0",
+    "qrcode.react": "^3.2.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  }
+}
