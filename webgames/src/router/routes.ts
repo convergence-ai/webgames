@@ -244,6 +244,14 @@ import PopupChaos, {
   PASSWORD_PopupChaos,
   TASK_ID_PopupChaos,
 } from "../pages/PopupChaos";
+import PopupChaosEasy, {
+  PASSWORD_PopupChaosEasy,
+  TASK_ID_PopupChaosEasy,
+} from "../pages/PopupChaosEasy";
+import PopupChaosHard, {
+  PASSWORD_PopupChaosHard,
+  TASK_ID_PopupChaosHard,
+} from "../pages/PopupChaosHard";
 import PrintReveal, {
   PASSWORD_PrintReveal,
   TASK_ID_PrintReveal,
@@ -1296,6 +1304,31 @@ export const routes: RouteConfig[] = [
     component: PopupChaos,
     tags: ["drag", "click", "timing"],
     password: PASSWORD_PopupChaos,
+  },
+  {
+    path: TASK_ID_PopupChaosEasy,
+    title: "Popup Chaos (Easy)",
+    description: "Close fewer popup windows to reveal the secret password",
+    icon: "🪟",
+    component: PopupChaosEasy,
+    tags: ["drag", "click", "timing", "easy"],
+    password: PASSWORD_PopupChaosEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_PopupChaos,
+  },
+  {
+    path: TASK_ID_PopupChaosHard,
+    title: "Popup Chaos (Hard)",
+    description:
+      "Close many more annoying popup windows to reveal the secret password",
+    icon: "🪟",
+    component: PopupChaosHard,
+    tags: ["drag", "click", "timing", "hard"],
+    password: PASSWORD_PopupChaosHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_PopupChaos,
   },
   {
     path: TASK_ID_ChartRead,
