@@ -220,6 +220,14 @@ import IframeNest, {
   PASSWORD_IframeNest,
   TASK_ID_IframeNest,
 } from "../pages/IframeNest";
+import IframeNestEasy, {
+  PASSWORD_IframeNestEasy,
+  TASK_ID_IframeNestEasy,
+} from "../pages/IframeNestEasy";
+import IframeNestHard, {
+  PASSWORD_IframeNestHard,
+  TASK_ID_IframeNestHard,
+} from "../pages/IframeNestHard";
 import IllegalMaterial, {
   PASSWORD_IllegalMaterial,
   TASK_ID_IllegalMaterial,
@@ -1824,6 +1832,35 @@ export const routes: RouteConfig[] = [
     component: IframeNest,
     tags: ["iframe", "navigation", "depth"],
     password: PASSWORD_IframeNest,
+    difficulty: "medium",
+    variant: "base",
+    base_task: TASK_ID_IframeNest,
+  },
+  {
+    path: TASK_ID_IframeNestEasy,
+    title: "Nested Frames (Easy)",
+    description:
+      "Navigate through fewer nested iframes to find the hidden button",
+    icon: "🖼️",
+    component: IframeNestEasy,
+    tags: ["iframe", "navigation", "depth", "easy"],
+    password: PASSWORD_IframeNestEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_IframeNest,
+  },
+  {
+    path: TASK_ID_IframeNestHard,
+    title: "Nested Frames (Hard)",
+    description:
+      "Navigate through more nested iframes to find the hidden button",
+    icon: "🖼️",
+    component: IframeNestHard,
+    tags: ["iframe", "navigation", "depth", "hard"],
+    password: PASSWORD_IframeNestHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_IframeNest,
   },
   {
     path: "iframe-content/:depth",
