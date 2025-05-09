@@ -208,6 +208,14 @@ import IllegalMaterial, {
   PASSWORD_IllegalMaterial,
   TASK_ID_IllegalMaterial,
 } from "../pages/IllegalMaterial";
+import IllegalMaterialEasy, {
+  PASSWORD_IllegalMaterialEasy,
+  TASK_ID_IllegalMaterialEasy,
+} from "../pages/IllegalMaterialEasy";
+import IllegalMaterialHard, {
+  PASSWORD_IllegalMaterialHard,
+  TASK_ID_IllegalMaterialHard,
+} from "../pages/IllegalMaterialHard";
 import KeyCombo, {
   PASSWORD_KeyCombo,
   TASK_ID_KeyCombo,
@@ -289,6 +297,14 @@ import PromptDefender, {
   PASSWORD_PromptDefender,
   TASK_ID_PromptDefender,
 } from "../pages/PromptDefender";
+import PromptDefenderEasy, {
+  PASSWORD_PromptDefenderEasy,
+  TASK_ID_PromptDefenderEasy,
+} from "../pages/PromptDefenderEasy";
+import PromptDefenderHard, {
+  PASSWORD_PromptDefenderHard,
+  TASK_ID_PromptDefenderHard,
+} from "../pages/PromptDefenderHard";
 import RecipeCalculator, {
   PASSWORD_RecipeCalculator,
   TASK_ID_RecipeCalculator,
@@ -1505,6 +1521,34 @@ export const routes: RouteConfig[] = [
     component: IllegalMaterial,
     tags: ["warning", "legal", "risk"],
     password: PASSWORD_IllegalMaterial,
+    difficulty: "medium",
+    variant: "base",
+    base_task: TASK_ID_IllegalMaterial,
+  },
+  {
+    path: TASK_ID_IllegalMaterialEasy,
+    title: "Restricted Content (Easy)",
+    description: "Acknowledge a simple content warning.",
+    icon: "⚠️",
+    component: IllegalMaterialEasy,
+    tags: ["warning", "easy"],
+    password: PASSWORD_IllegalMaterialEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_IllegalMaterial,
+  },
+  {
+    path: TASK_ID_IllegalMaterialHard,
+    title: "Restricted Content (Hard)",
+    description:
+      "Navigate a series of intimidating warnings and confirmations.",
+    icon: "🚨",
+    component: IllegalMaterialHard,
+    tags: ["warning", "legal", "risk", "hard"],
+    password: PASSWORD_IllegalMaterialHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_IllegalMaterial,
   },
   {
     path: TASK_ID_PromptDefender,
@@ -1514,6 +1558,34 @@ export const routes: RouteConfig[] = [
     component: PromptDefender,
     tags: ["deception", "attention"],
     password: PASSWORD_PromptDefender,
+    difficulty: "medium",
+    variant: "base",
+    base_task: TASK_ID_PromptDefender,
+  },
+  {
+    path: TASK_ID_PromptDefenderEasy,
+    title: "Prompt Defender (Easy)",
+    description: "A simpler test of attention to find the password.",
+    icon: "🛡️",
+    component: PromptDefenderEasy,
+    tags: ["deception", "attention", "easy"],
+    password: PASSWORD_PromptDefenderEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_PromptDefender,
+  },
+  {
+    path: TASK_ID_PromptDefenderHard,
+    title: "Prompt Defender (Hard)",
+    description:
+      "Resist multiple layers of deception to find the true password.",
+    icon: "🛡️",
+    component: PromptDefenderHard,
+    tags: ["deception", "attention", "hard"],
+    password: PASSWORD_PromptDefenderHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_PromptDefender,
   },
   {
     path: TASK_ID_ShoppingChallenge,
