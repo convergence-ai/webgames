@@ -68,6 +68,14 @@ import CalendarComprehension2, {
   PASSWORD_CalendarComprehension2,
   TASK_ID_CalendarComprehension2,
 } from "../pages/CalendarComprehension2";
+import CalendarComprehensionEasy, {
+  PASSWORD_CalendarComprehensionEasy,
+  TASK_ID_CalendarComprehensionEasy,
+} from "../pages/CalendarComprehensionEasy";
+import CalendarComprehensionHard, {
+  PASSWORD_CalendarComprehensionHard,
+  TASK_ID_CalendarComprehensionHard,
+} from "../pages/CalendarComprehensionHard";
 import CanvasCatch, {
   PASSWORD_CanvasCatch,
   TASK_ID_CanvasCatch,
@@ -116,7 +124,6 @@ import ClickCubedHard, {
   PASSWORD_ClickCubedHard,
   TASK_ID_ClickCubedHard,
 } from "../pages/ClickCubedHard";
-import { TASK_ID_ClickPixel } from "../pages/ClickPixel";
 import ColorHarmony, {
   PASSWORD_ColorHarmony,
   TASK_ID_ColorHarmony,
@@ -256,10 +263,26 @@ import LadyBirdPlanner, {
   PASSWORD_LadyBirdPlanner,
   TASK_ID_LadyBirdPlanner,
 } from "../pages/LadyBirdPlanner";
+import LadyBirdPlannerEasy, {
+  PASSWORD_LadyBirdPlannerEasy,
+  TASK_ID_LadyBirdPlannerEasy,
+} from "../pages/LadyBirdPlannerEasy";
+import LadyBirdPlannerHard, {
+  PASSWORD_LadyBirdPlannerHard,
+  TASK_ID_LadyBirdPlannerHard,
+} from "../pages/LadyBirdPlannerHard";
 import MapPanner, {
   PASSWORD_MapPanner,
   TASK_ID_MapPanner,
 } from "../pages/MapPanner";
+import MapPannerEasy, {
+  PASSWORD_MapPannerEasy,
+  TASK_ID_MapPannerEasy,
+} from "../pages/MapPannerEasy";
+import MapPannerHard, {
+  PASSWORD_MapPannerHard,
+  TASK_ID_MapPannerHard,
+} from "../pages/MapPannerHard";
 import MazeNavigator, { PASSWORD_MazeNavigator } from "../pages/MazeNavigator";
 import MazeNavigatorEasy, {
   PASSWORD_MazeNavigatorEasy,
@@ -419,7 +442,17 @@ import ShopAdmin, {
   PASSWORD_ShopAdmin,
   TASK_ID_ShopAdmin,
 } from "../pages/ShopAdmin";
+import ShopAdminEasy, {
+  PASSWORD_ShopAdminEasy,
+  TASK_ID_ShopAdminEasy,
+} from "../pages/ShopAdminEasy";
 import ShopAdminEdit from "../pages/ShopAdminEdit";
+import ShopAdminEditEasy from "../pages/ShopAdminEditEasy";
+import ShopAdminEditHard from "../pages/ShopAdminEditHard";
+import ShopAdminHard, {
+  PASSWORD_ShopAdminHard,
+  TASK_ID_ShopAdminHard,
+} from "../pages/ShopAdminHard";
 import ShoppingChallenge, {
   PASSWORD_ShoppingChallenge,
   TASK_ID_ShoppingChallenge,
@@ -2082,6 +2115,35 @@ export const routes: RouteConfig[] = [
     component: CalendarComprehension,
     tags: ["calendar", "comprehension", "attention"],
     password: PASSWORD_CalendarComprehension,
+    difficulty: "medium",
+    variant: "base",
+    base_task: TASK_ID_CalendarComprehension,
+  },
+  {
+    path: TASK_ID_CalendarComprehensionEasy,
+    title: "Calendar Comprehension (Easy)",
+    description:
+      "Study a calendar and answer a few simple questions about the events.",
+    icon: "📅",
+    component: CalendarComprehensionEasy,
+    tags: ["calendar", "comprehension", "attention", "easy"],
+    password: PASSWORD_CalendarComprehensionEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_CalendarComprehension,
+  },
+  {
+    path: TASK_ID_CalendarComprehensionHard,
+    title: "Calendar Comprehension (Hard)",
+    description:
+      "Study a calendar and answer several complex questions about the events.",
+    icon: "📅",
+    component: CalendarComprehensionHard,
+    tags: ["calendar", "comprehension", "attention", "hard"],
+    password: PASSWORD_CalendarComprehensionHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_CalendarComprehension,
   },
   {
     path: TASK_ID_MapPanner,
@@ -2093,6 +2155,32 @@ export const routes: RouteConfig[] = [
     password: PASSWORD_MapPanner,
   },
   {
+    path: TASK_ID_MapPannerEasy,
+    title: "Map Panner (Easy)",
+    description:
+      "Pan around a smaller map to find the hidden treasure. It's closer and easier to find!",
+    icon: "🗺️",
+    component: MapPannerEasy,
+    tags: ["drag", "exploration", "coordination", "easy"],
+    password: PASSWORD_MapPannerEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_MapPanner,
+  },
+  {
+    path: TASK_ID_MapPannerHard,
+    title: "Map Panner (Hard)",
+    description:
+      "Pan around a vast and treacherous map to find the elusive treasure. Good luck!",
+    icon: "🗺️",
+    component: MapPannerHard,
+    tags: ["drag", "exploration", "coordination", "hard"],
+    password: PASSWORD_MapPannerHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_MapPanner,
+  },
+  {
     path: TASK_ID_LadyBirdPlanner,
     title: "LadyBird Planner",
     description:
@@ -2101,6 +2189,34 @@ export const routes: RouteConfig[] = [
     component: LadyBirdPlanner,
     tags: ["planning", "puzzle", "maze"],
     password: PASSWORD_LadyBirdPlanner,
+    difficulty: "medium",
+    variant: "base",
+    base_task: TASK_ID_LadyBirdPlanner,
+  },
+  {
+    path: TASK_ID_LadyBirdPlannerEasy,
+    title: "LadyBird Planner (Easy)",
+    description:
+      "Plan the ladybird's path on a smaller grid with fewer obstacles.",
+    icon: "🐞",
+    component: LadyBirdPlannerEasy,
+    tags: ["planning", "puzzle", "maze", "easy"],
+    password: PASSWORD_LadyBirdPlannerEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_LadyBirdPlanner,
+  },
+  {
+    path: TASK_ID_LadyBirdPlannerHard,
+    title: "LadyBird Planner (Hard)",
+    description: "Plan the ladybird's path on a larger, more complex grid.",
+    icon: "🐞",
+    component: LadyBirdPlannerHard,
+    tags: ["planning", "puzzle", "maze", "hard"],
+    password: PASSWORD_LadyBirdPlannerHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_LadyBirdPlanner,
   },
   {
     path: TASK_ID_ShopAdmin,
@@ -2110,6 +2226,9 @@ export const routes: RouteConfig[] = [
     component: ShopAdmin,
     tags: ["admin", "form", "edit"],
     password: PASSWORD_ShopAdmin,
+    difficulty: "medium", // Assuming base is medium
+    variant: "base",
+    base_task: TASK_ID_ShopAdmin,
   },
   {
     path: "shop-admin/edit/:productId",
@@ -2121,7 +2240,49 @@ export const routes: RouteConfig[] = [
     hidden: true,
   },
   {
-    path: TASK_ID_ClickPixel,
+    path: TASK_ID_ShopAdminEasy,
+    title: "Shop Admin (Easy)",
+    description: "Update a specific product price with clear instructions.",
+    icon: "🏪",
+    component: ShopAdminEasy,
+    tags: ["admin", "form", "edit", "easy"],
+    password: PASSWORD_ShopAdminEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_ShopAdmin,
+  },
+  {
+    path: "shop-admin-easy/edit/:productId",
+    title: "Edit Product (Easy)",
+    description: "Edit product details for the easy challenge",
+    icon: "✏️",
+    component: ShopAdminEditEasy,
+    tags: ["admin", "form", "edit"],
+    hidden: true,
+  },
+  {
+    path: TASK_ID_ShopAdminHard,
+    title: "Shop Admin (Hard)",
+    description: "Find a product, calculate a discount, and update its price.",
+    icon: "🏪",
+    component: ShopAdminHard,
+    tags: ["admin", "form", "edit", "hard", "calculation"],
+    password: PASSWORD_ShopAdminHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_ShopAdmin,
+  },
+  {
+    path: "shop-admin-hard/edit/:productId",
+    title: "Edit Product (Hard)",
+    description: "Edit product details for the hard challenge",
+    icon: "✏️",
+    component: ShopAdminEditHard,
+    tags: ["admin", "form", "edit"],
+    hidden: true,
+  },
+  {
+    path: TASK_ID_PixelCopy,
     title: "Pixel Copy",
     description: "Recreate the pattern by clicking pixels.",
     icon: "🖼️",
