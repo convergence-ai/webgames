@@ -124,6 +124,10 @@ import ClickCubedHard, {
   PASSWORD_ClickCubedHard,
   TASK_ID_ClickCubedHard,
 } from "../pages/ClickCubedHard";
+import ClickPixel, {
+  PASSWORD_ClickPixel,
+  TASK_ID_ClickPixel,
+} from "../pages/ClickPixel";
 import ColorHarmony, {
   PASSWORD_ColorHarmony,
   TASK_ID_ColorHarmony,
@@ -2391,5 +2395,15 @@ export const routes: RouteConfig[] = [
     tags: ["pdf", "form", "attention", "download"],
     password: PASSWORD_ResumeChallenge,
     difficulty: "medium",
+  },
+  {
+    path: TASK_ID_ClickPixel,
+    title: "Click Pixel",
+    description: "Click the single target pixel on the screen.",
+    icon: "🎯",
+    component: ClickPixel,
+    tags: ["click", "pixel", "precision", "coordination"],
+    password: PASSWORD_ClickPixel,
+    difficulty: "easy",
   },
 ];
