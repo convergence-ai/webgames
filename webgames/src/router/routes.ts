@@ -68,6 +68,14 @@ import CalendarComprehension2, {
   PASSWORD_CalendarComprehension2,
   TASK_ID_CalendarComprehension2,
 } from "../pages/CalendarComprehension2";
+import CalendarComprehension2Easy, {
+  PASSWORD_CalendarComprehension2Easy,
+  TASK_ID_CalendarComprehension2Easy,
+} from "../pages/CalendarComprehension2Easy";
+import CalendarComprehension2Hard, {
+  PASSWORD_CalendarComprehension2Hard,
+  TASK_ID_CalendarComprehension2Hard,
+} from "../pages/CalendarComprehension2Hard";
 import CalendarComprehensionEasy, {
   PASSWORD_CalendarComprehensionEasy,
   TASK_ID_CalendarComprehensionEasy,
@@ -128,6 +136,14 @@ import ClickPixel, {
   PASSWORD_ClickPixel,
   TASK_ID_ClickPixel,
 } from "../pages/ClickPixel";
+import ClickPixelEasy, {
+  PASSWORD_ClickPixelEasy,
+  TASK_ID_ClickPixelEasy,
+} from "../pages/ClickPixelEasy";
+import ClickPixelHard, {
+  PASSWORD_ClickPixelHard,
+  TASK_ID_ClickPixelHard,
+} from "../pages/ClickPixelHard";
 import ColorHarmony, {
   PASSWORD_ColorHarmony,
   TASK_ID_ColorHarmony,
@@ -376,6 +392,14 @@ import RecipeCalculator, {
   PASSWORD_RecipeCalculator,
   TASK_ID_RecipeCalculator,
 } from "../pages/RecipeCalculator";
+import RecipeCalculatorEasy, {
+  PASSWORD_RecipeCalculatorEasy,
+  TASK_ID_RecipeCalculatorEasy,
+} from "../pages/RecipeCalculatorEasy";
+import RecipeCalculatorHard, {
+  PASSWORD_RecipeCalculatorHard,
+  TASK_ID_RecipeCalculatorHard,
+} from "../pages/RecipeCalculatorHard";
 import RecipeDetail from "../pages/RecipeDetail";
 import RecipeList from "../pages/RecipeList";
 import ResumeChallenge, {
@@ -485,6 +509,14 @@ import StockMarketScroll, {
   PASSWORD_StockMarketScroll,
   TASK_ID_StockMarketScroll,
 } from "../pages/StockMarketScroll";
+import StockMarketScrollEasy, {
+  PASSWORD_StockMarketScrollEasy,
+  TASK_ID_StockMarketScrollEasy,
+} from "../pages/StockMarketScrollEasy";
+import StockMarketScrollHard, {
+  PASSWORD_StockMarketScrollHard,
+  TASK_ID_StockMarketScrollHard,
+} from "../pages/StockMarketScrollHard";
 import TabSync, { PASSWORD_TabSync, TASK_ID_TabSync } from "../pages/TabSync";
 import TabSyncEasy, {
   PASSWORD_TabSyncEasy,
@@ -536,6 +568,14 @@ import VerifyChallenge, {
   PASSWORD_Verify,
   TASK_ID_Verify,
 } from "../pages/VerifyChallenge";
+import VerifyChallengeEasy, {
+  PASSWORD_VerifyEasy,
+  TASK_ID_VerifyEasy,
+} from "../pages/VerifyChallengeEasy";
+import VerifyChallengeHard, {
+  PASSWORD_VerifyHard,
+  TASK_ID_VerifyHard,
+} from "../pages/VerifyChallengeHard";
 import WebGLText, {
   PASSWORD_WebGLText,
   TASK_ID_WebGLText,
@@ -2348,6 +2388,34 @@ export const routes: RouteConfig[] = [
     component: RecipeCalculator,
     tags: ["math", "recipes", "calculation"],
     password: PASSWORD_RecipeCalculator,
+    difficulty: "medium", // Added base difficulty
+    variant: "base", // Added variant
+    base_task: TASK_ID_RecipeCalculator, // Added base_task
+  },
+  {
+    path: TASK_ID_RecipeCalculatorEasy,
+    title: "Recipe Calculator (Easy)",
+    description: "Calculate ingredients for a simple recipe and small serving.",
+    icon: "🧮",
+    component: RecipeCalculatorEasy,
+    tags: ["math", "recipes", "calculation", "easy"],
+    password: PASSWORD_RecipeCalculatorEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_RecipeCalculator,
+  },
+  {
+    path: TASK_ID_RecipeCalculatorHard,
+    title: "Recipe Calculator (Hard)",
+    description:
+      "Calculate ingredients for a complex recipe, large serving, with unit conversion.",
+    icon: "🧮",
+    component: RecipeCalculatorHard,
+    tags: ["math", "recipes", "calculation", "hard", "conversion"],
+    password: PASSWORD_RecipeCalculatorHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_RecipeCalculator,
   },
   {
     path: "ad-clicked",
@@ -2369,6 +2437,32 @@ export const routes: RouteConfig[] = [
     password: PASSWORD_CalendarComprehension2,
   },
   {
+    path: TASK_ID_CalendarComprehension2Easy,
+    title: "Advanced Calendar Challenge (Easy)",
+    description:
+      "Test your calendar comprehension with simpler time calculations.",
+    icon: "📅",
+    component: CalendarComprehension2Easy,
+    tags: ["calendar", "time", "math", "easy"],
+    password: PASSWORD_CalendarComprehension2Easy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_CalendarComprehension2,
+  },
+  {
+    path: TASK_ID_CalendarComprehension2Hard,
+    title: "Advanced Calendar Challenge (Hard)",
+    description:
+      "Test your calendar comprehension with very complex time calculations and edge cases.",
+    icon: "📅",
+    component: CalendarComprehension2Hard,
+    tags: ["calendar", "time", "math", "hard"],
+    password: PASSWORD_CalendarComprehension2Hard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_CalendarComprehension2,
+  },
+  {
     path: TASK_ID_StockMarketScroll,
     title: "Stock Market Insight",
     description: "Discover the best tech stock to buy in 2025",
@@ -2376,6 +2470,33 @@ export const routes: RouteConfig[] = [
     component: StockMarketScroll,
     tags: ["scroll", "reading", "stocks"],
     password: PASSWORD_StockMarketScroll,
+    difficulty: "medium", // Added base difficulty
+    variant: "base", // Added variant
+    base_task: TASK_ID_StockMarketScroll, // Added base_task
+  },
+  {
+    path: TASK_ID_StockMarketScrollEasy,
+    title: "Stock Market Insight (Easy)",
+    description: "Quickly find the recommended tech stock.",
+    icon: "📈",
+    component: StockMarketScrollEasy,
+    tags: ["scroll", "reading", "stocks", "easy"],
+    password: PASSWORD_StockMarketScrollEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_StockMarketScroll,
+  },
+  {
+    path: TASK_ID_StockMarketScrollHard,
+    title: "Stock Market Insight (Hard)",
+    description: "Analyze a detailed report to find the best tech stock.",
+    icon: "📈",
+    component: StockMarketScrollHard,
+    tags: ["scroll", "reading", "stocks", "hard", "analysis"],
+    password: PASSWORD_StockMarketScrollHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_StockMarketScroll,
   },
   {
     path: TASK_ID_Verify,
@@ -2385,6 +2506,30 @@ export const routes: RouteConfig[] = [
     component: VerifyChallenge,
     tags: ["verification", "captcha"],
     password: PASSWORD_Verify,
+  },
+  {
+    path: TASK_ID_VerifyEasy,
+    title: "Verification Challenge (Easy)",
+    description: "Can you decipher the verification code?",
+    icon: "🔐",
+    component: VerifyChallengeEasy,
+    tags: ["verification", "captcha", "easy"],
+    password: PASSWORD_VerifyEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_Verify,
+  },
+  {
+    path: TASK_ID_VerifyHard,
+    title: "Verification Challenge (Hard)",
+    description: "Can you decipher the verification code?",
+    icon: "🔐",
+    component: VerifyChallengeHard,
+    tags: ["verification", "captcha", "hard"],
+    password: PASSWORD_VerifyHard,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_Verify,
   },
   {
     path: TASK_ID_ResumeChallenge,
@@ -2405,5 +2550,31 @@ export const routes: RouteConfig[] = [
     tags: ["click", "pixel", "precision", "coordination"],
     password: PASSWORD_ClickPixel,
     difficulty: "easy",
+    variant: "base",
+    base_task: TASK_ID_ClickPixel,
+  },
+  {
+    path: TASK_ID_ClickPixelEasy,
+    title: "Click Pixel (Easy)",
+    description: "Click the larger target pixel on the screen.",
+    icon: "🎯",
+    component: ClickPixelEasy,
+    tags: ["click", "pixel", "precision", "coordination", "easy"],
+    password: PASSWORD_ClickPixelEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_ClickPixel,
+  },
+  {
+    path: TASK_ID_ClickPixelHard,
+    title: "Click Pixel (Hard)",
+    description: "Click the tiny 1x1 target pixel with no hints.",
+    icon: "🎯",
+    component: ClickPixelHard,
+    tags: ["click", "pixel", "precision", "coordination", "hard"],
+    password: PASSWORD_ClickPixelHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_ClickPixel,
   },
 ];
