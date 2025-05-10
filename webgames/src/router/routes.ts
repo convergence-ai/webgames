@@ -285,6 +285,14 @@ import OTPEntry, {
   PASSWORD_OTPEntry,
   TASK_ID_OTPEntry,
 } from "../pages/OTPEntry";
+import OTPEntryEasy, {
+  PASSWORD_OTPEntryEasy,
+  TASK_ID_OTPEntryEasy,
+} from "../pages/OTPEntryEasy";
+import OTPEntryHard, {
+  PASSWORD_OTPEntryHard,
+  TASK_ID_OTPEntryHard,
+} from "../pages/OTPEntryHard";
 import Patience, {
   PASSWORD_Patience,
   TASK_ID_Patience,
@@ -355,6 +363,14 @@ import RoboCheck, {
   PASSWORD_RoboCheck,
   TASK_ID_RoboCheck,
 } from "../pages/RoboCheck";
+import RoboCheckEasy, {
+  PASSWORD_RoboCheckEasy,
+  TASK_ID_RoboCheckEasy,
+} from "../pages/RoboCheckEasy";
+import RoboCheckHard, {
+  PASSWORD_RoboCheckHard,
+  TASK_ID_RoboCheckHard,
+} from "../pages/RoboCheckHard";
 import ScrollDiagonal, {
   PASSWORD_ScrollDiagonal,
   TASK_ID_ScrollDiagonal,
@@ -1942,6 +1958,34 @@ export const routes: RouteConfig[] = [
     component: OTPEntry,
     tags: ["input", "form", "focus"],
     password: PASSWORD_OTPEntry,
+    difficulty: "medium",
+    variant: "base",
+    base_task: TASK_ID_OTPEntry,
+  },
+  {
+    path: TASK_ID_OTPEntryEasy,
+    title: "OTP Entry (Easy)",
+    description: "Enter a 4-digit one-time password.",
+    icon: "🔢",
+    component: OTPEntryEasy,
+    tags: ["input", "form", "focus", "easy"],
+    password: PASSWORD_OTPEntryEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_OTPEntry,
+  },
+  {
+    path: TASK_ID_OTPEntryHard,
+    title: "OTP Entry (Hard)",
+    description:
+      "Scan a QR code with an authenticator app and enter the 6-digit code.",
+    icon: "#️⃣", // Changed icon for variety
+    component: OTPEntryHard,
+    tags: ["input", "form", "focus", "hard", "qr", "authenticator"],
+    password: PASSWORD_OTPEntryHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_OTPEntry,
   },
   {
     path: TASK_ID_PrintReveal,
@@ -1960,6 +2004,31 @@ export const routes: RouteConfig[] = [
     component: RoboCheck,
     tags: ["captcha", "verification", "human"],
     password: PASSWORD_RoboCheck,
+  },
+  {
+    path: TASK_ID_RoboCheckEasy,
+    title: "Human Verification (Easy)",
+    description: "Quickly complete a CAPTCHA challenge to prove you're human.",
+    icon: "🤖",
+    component: RoboCheckEasy,
+    tags: ["captcha", "verification", "human", "easy"],
+    password: PASSWORD_RoboCheckEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_RoboCheck,
+  },
+  {
+    path: TASK_ID_RoboCheckHard,
+    title: "Human Verification (Hard)",
+    description:
+      "Complete an advanced CAPTCHA challenge under high security scrutiny.",
+    icon: "🚨",
+    component: RoboCheckHard,
+    tags: ["captcha", "verification", "human", "hard", "security"],
+    password: PASSWORD_RoboCheckHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_RoboCheck,
   },
   {
     path: TASK_ID_RightClickReveal,
