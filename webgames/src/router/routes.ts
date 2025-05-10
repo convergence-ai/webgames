@@ -343,6 +343,14 @@ import ScrollDiagonal, {
   PASSWORD_ScrollDiagonal,
   TASK_ID_ScrollDiagonal,
 } from "../pages/ScrollDiagonal";
+import ScrollDiagonalEasy, {
+  PASSWORD_ScrollDiagonalEasy,
+  TASK_ID_ScrollDiagonalEasy,
+} from "../pages/ScrollDiagonalEasy";
+import ScrollDiagonalHard, {
+  PASSWORD_ScrollDiagonalHard,
+  TASK_ID_ScrollDiagonalHard,
+} from "../pages/ScrollDiagonalHard";
 import ScrollHorizontal, {
   PASSWORD_ScrollHorizontal,
   TASK_ID_ScrollHorizontal,
@@ -1733,6 +1741,35 @@ export const routes: RouteConfig[] = [
     component: ScrollDiagonal,
     tags: ["scroll", "endurance", "coordination"],
     password: PASSWORD_ScrollDiagonal,
+    difficulty: "medium",
+    variant: "base",
+    base_task: TASK_ID_ScrollDiagonal,
+  },
+  {
+    path: TASK_ID_ScrollDiagonalEasy,
+    title: "Diagonal Scroll (Easy)",
+    description:
+      "Navigate to the bottom-right corner through diagonal scrolling! Fewer boxes.",
+    icon: "↘️",
+    component: ScrollDiagonalEasy,
+    tags: ["scroll", "endurance", "coordination", "easy"],
+    password: PASSWORD_ScrollDiagonalEasy,
+    difficulty: "easy",
+    variant: "easy",
+    base_task: TASK_ID_ScrollDiagonal,
+  },
+  {
+    path: TASK_ID_ScrollDiagonalHard,
+    title: "Diagonal Scroll (Hard)",
+    description:
+      "Navigate to the bottom-right corner through diagonal scrolling! Many more boxes.",
+    icon: "↘️",
+    component: ScrollDiagonalHard,
+    tags: ["scroll", "endurance", "coordination", "hard"],
+    password: PASSWORD_ScrollDiagonalHard,
+    difficulty: "hard",
+    variant: "hard",
+    base_task: TASK_ID_ScrollDiagonal,
   },
   {
     path: TASK_ID_BlockStack,
