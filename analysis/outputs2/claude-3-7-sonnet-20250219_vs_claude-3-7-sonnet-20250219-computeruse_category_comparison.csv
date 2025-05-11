@@ -1,0 +1,6 @@
+category,model_base_score,model_compare_score,gemini-2.5-pro-preview-05-06,gemini-2.5-pro-preview-05-06-textonly,gemini-2.5-flash-preview-04-17,gpt-4o,gpt-4o-mini,qwen2.5-vl-72b-instruct,qwen2.5-vl-32b-instruct,qwen2.5-vl-7b-instruct,normalized_compare_score
+adversarial_resistance,0.6266666666666667,0.36000000000000004,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.574468085106383
+cognitive_abilities,0.38759689922480617,0.023255813953488372,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.060000000000000005
+realtime_responsiveness,0.25641025641025644,0.25641025641025644,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+technical_fluency,0.5918367346938775,0.3857142857142857,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.6517241379310345
+visual_comprehension,0.2889733840304182,0.07984790874524714,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.2763157894736842

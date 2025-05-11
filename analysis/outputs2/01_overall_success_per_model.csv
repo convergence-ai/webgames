@@ -1,0 +1,11 @@
+model,overall_success_rate
+claude-3-7-sonnet-20250219,0.44666666666666666
+claude-3-7-sonnet-20250219-computeruse,0.22
+gemini-2.5-pro-preview-05-06,0.5
+gemini-2.5-pro-preview-05-06-textonly,0.41333333333333333
+gemini-2.5-flash-preview-04-17,0.42
+gpt-4o,0.3933333333333333
+gpt-4o-mini,0.3466666666666667
+qwen2.5-vl-72b-instruct,0.26666666666666666
+qwen2.5-vl-32b-instruct,0.24666666666666667
+qwen2.5-vl-7b-instruct,0.12666666666666668

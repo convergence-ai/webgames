@@ -2,13 +2,13 @@ from typing import Any, Optional
 
 from inspect_ai.dataset import Dataset, Sample, hf_dataset
 from inspect_ai.scorer import (
+    CORRECT,
+    INCORRECT,
     Score,
     Target,
     accuracy,
     scorer,
     stderr,
-    CORRECT,
-    INCORRECT,
 )
 from inspect_ai.solver import TaskState
 
