@@ -20,6 +20,8 @@
     "axios": "^1.7.9",
     "canvas-confetti": "^1.9.3",
     "matter-js": "^0.20.0",
+    "otpauth": "^9.4.0",
+    "qrcode.react": "^4.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-google-recaptcha": "^3.1.0",

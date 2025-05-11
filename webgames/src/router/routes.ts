@@ -2064,7 +2064,7 @@ export const routes: RouteConfig[] = [
     title: "OTP Entry (Hard)",
     description:
       "Scan a QR code with an authenticator app and enter the 6-digit code.",
-    icon: "#️⃣", // Changed icon for variety
+    icon: "🔢",
     component: OTPEntryHard,
     tags: ["input", "form", "focus", "hard", "qr", "authenticator"],
     password: PASSWORD_OTPEntryHard,

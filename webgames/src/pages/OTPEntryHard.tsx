@@ -1,5 +1,5 @@
 import * as OTPAuth from "otpauth";
-import QRCode from "qrcode.react";
+import { QRCodeSVG } from "qrcode.react";
 import { KeyboardEvent, useEffect, useRef, useState } from "react";
 import { useTaskAnalytics } from "../utils/useTaskAnalytics";
 
@@ -142,7 +142,7 @@ const OTPEntryHard = () => {
               Authenticator, Authy):
             </p>
             <div className="flex justify-center mb-6 bg-white p-4 rounded-lg border">
-              <QRCode value={otpUri} size={200} level="H" />
+              <QRCodeSVG value={otpUri} size={200} level="H" />
             </div>
             <p className="mb-1 text-sm text-gray-600">
               Can't scan? Secret key:
