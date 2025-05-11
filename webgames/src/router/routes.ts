@@ -2326,18 +2326,6 @@ export const routes: RouteConfig[] = [
     hidden: true,
   },
   {
-    path: TASK_ID_PixelCopy,
-    title: "Pixel Copy",
-    description: "Recreate the pattern by clicking pixels.",
-    icon: "🖼️",
-    component: PixelCopy,
-    tags: ["pixel", "drawing", "precision"],
-    password: PASSWORD_PixelCopy,
-    difficulty: "medium",
-    variant: "base",
-    base_task: TASK_ID_PixelCopy,
-  },
-  {
     path: TASK_ID_PixelCopyEasy,
     title: "Pixel Copy (Easy)",
     description: "Recreate a simple pattern on a smaller grid.",
