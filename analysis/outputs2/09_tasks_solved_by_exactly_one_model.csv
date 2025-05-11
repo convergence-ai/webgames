@@ -1,0 +1,14 @@
+task_id,solving_model
+scroll-horizontal-easy,claude-3-7-sonnet-20250219-computeruse
+scroll-horizontal-hard,claude-3-7-sonnet-20250219-computeruse
+right-click,claude-3-7-sonnet-20250219-computeruse
+right-click-easy,claude-3-7-sonnet-20250219-computeruse
+map-panner-easy,claude-3-7-sonnet-20250219-computeruse
+robo-check,gpt-4o-mini
+verify-challenge,gpt-4o-mini
+wolf-goat-cabbage-hard,gemini-2.5-pro-preview-05-06-textonly
+ladybird-easy,gemini-2.5-flash-preview-04-17
+pixel-copy-easy,claude-3-7-sonnet-20250219
+scroll-diagonal,qwen2.5-vl-32b-instruct
+map-panner,gemini-2.5-pro-preview-05-06
+scroll-diagonal-hard,qwen2.5-vl-72b-instruct

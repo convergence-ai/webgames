@@ -1,0 +1,4 @@
+difficulty,claude-3-7-sonnet-20250219,claude-3-7-sonnet-20250219-computeruse,model_base_score,model_compare_score,gemini-2.5-flash-preview-04-17,gpt-4o,gpt-4o-mini,qwen2.5-vl-72b-instruct,qwen2.5-vl-32b-instruct,qwen2.5-vl-7b-instruct,normalized_compare_score
+easy,,,0.5921052631578947,0.5263157894736842,,,,,,,0.888888888888889
+base,,,0.4576271186440678,0.3728813559322034,,,,,,,0.8148148148148148
+hard,,,0.29333333333333333,0.22666666666666666,,,,,,,0.7727272727272727
