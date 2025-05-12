@@ -12,8 +12,11 @@ export default function Home() {
     })();
   }, []);
   const [searchParams] = useSearchParams();
-  const showDifficulties = searchParams.get("showDifficulties") === "true";
-  const showDownloads = searchParams.get("showDownloads") === "true";
+  const isLocalhost = window.location.hostname === "localhost";
+  const showDifficulties =
+    searchParams.get("showDifficulties") === "true" || isLocalhost;
+  const showDownloads =
+    searchParams.get("showDownloads") === "true" || isLocalhost;
 
   const visibleRoutes = routes.filter(
     (route) =>
@@ -25,12 +28,8 @@ export default function Home() {
     const jsonl = visibleRoutes
       .map((route) =>
         JSON.stringify({
+          ...route,
           id: route.path,
-          title: route.title,
-          description: route.description,
-          path: route.path,
-          password: route.password,
-          tags: route.tags,
         })
       )
       .join("\n");
@@ -47,7 +46,17 @@ export default function Home() {
   };
 
   const downloadChallengesCSV = () => {
-    const headers = ["id", "title", "description", "path", "password", "tags"];
+    const headers = [
+      "id",
+      "title",
+      "description",
+      "path",
+      "password",
+      "tags",
+      "variant",
+      "difficulty",
+      "base_task",
+    ];
     const csvContent = [
       headers.join(","),
       ...visibleRoutes.map((route) => {
@@ -57,6 +66,9 @@ export default function Home() {
           `"${route.description.replace(/"/g, '""')}"`,
           route.path,
           route.password,
+          route.variant,
+          route.difficulty,
+          route.base_task,
           `"${(route.tags || []).join(";")}"`,
         ].join(",");
       }),
