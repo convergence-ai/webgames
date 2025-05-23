@@ -1,0 +1,12 @@
+model,adversarial_resistance,cognitive_abilities,realtime_responsiveness,technical_fluency,visual_comprehension,Average
+claude-3-7-sonnet-20250219,62.7%,38.8%,25.6%,59.2%,28.9%,43.0%
+claude-3-7-sonnet-20250219-computeruse,36.0%,2.3%,25.6%,38.6%,8.0%,22.1%
+gemini-2.5-pro-preview-05-06,58.7%,43.8%,46.2%,60.4%,30.8%,48.0%
+gemini-2.5-pro-preview-05-06-textonly,52.0%,29.1%,46.2%,54.3%,22.4%,40.8%
+gemini-2.5-flash-preview-04-17,58.7%,42.6%,31.4%,53.3%,23.6%,41.9%
+gpt-4o,52.0%,29.1%,25.0%,51.2%,25.5%,36.6%
+gpt-4o-mini,56.0%,19.4%,25.0%,46.7%,18.3%,33.1%
+qwen2.5-vl-72b-instruct,49.3%,13.6%,19.2%,36.5%,12.2%,26.2%
+qwen2.5-vl-32b-instruct,49.3%,9.7%,19.2%,34.5%,12.2%,25.0%
+qwen2.5-vl-7b-instruct,36.0%,1.2%,0.0%,21.2%,3.4%,12.4%
+Average,51.1%,22.9%,26.3%,45.6%,18.5%,32.9%
