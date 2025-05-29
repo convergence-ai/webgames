@@ -1,0 +1,6 @@
+category,claude-3-7-sonnet-20250219,claude-3-7-sonnet-20250219-computeruse,model_base_score,model_compare_score,gemini-2.5-flash-preview-04-17,gpt-4o,gpt-4o-mini,qwen2.5-vl-72b-instruct,qwen2.5-vl-32b-instruct,qwen2.5-vl-7b-instruct,normalized_compare_score
+adversarial_resistance,0.0,0.0,0.5866666666666667,0.52,0.0,0.0,0.0,0.0,0.0,0.0,0.8863636363636364
+cognitive_abilities,0.0,0.0,0.437984496124031,0.29069767441860467,0.0,0.0,0.0,0.0,0.0,0.0,0.6637168141592921
+realtime_responsiveness,0.0,0.0,0.46153846153846156,0.46153846153846156,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+technical_fluency,0.0,0.0,0.6040816326530613,0.5428571428571429,0.0,0.0,0.0,0.0,0.0,0.0,0.8986486486486487
+visual_comprehension,0.0,0.0,0.3079847908745247,0.22433460076045628,0.0,0.0,0.0,0.0,0.0,0.0,0.7283950617283952
