@@ -1,0 +1,19 @@
+[project]
+name = "browseruse-webgames"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "browser-use[memory]>=0.1.45",
+    "google-genai>=1.14.0",
+    "inspect-ai==0.3.95",
+    "patchright>=1.52.3",
+    "pyopenssl>=25.0.0",
+]
+
+[tool.uv]
+override-dependencies = [
+    "rich==14.0.0",
+    "botocore==1.37.23", 
+]

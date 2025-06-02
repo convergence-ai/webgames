@@ -1,0 +1,16 @@
+category,difficulty,success_rate
+adversarial_resistance,easy,0.6375
+adversarial_resistance,base,0.475
+adversarial_resistance,hard,0.25
+cognitive_abilities,easy,0.4
+cognitive_abilities,base,0.19
+cognitive_abilities,hard,0.10714285714285714
+realtime_responsiveness,easy,0.225
+realtime_responsiveness,base,0.2
+realtime_responsiveness,hard,0.175
+technical_fluency,easy,0.46923076923076923
+technical_fluency,base,0.36666666666666664
+technical_fluency,hard,0.22592592592592592
+visual_comprehension,easy,0.3105263157894737
+visual_comprehension,base,0.16
+visual_comprehension,hard,0.10526315789473684
